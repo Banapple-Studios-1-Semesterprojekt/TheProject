@@ -299,6 +299,7 @@ MonoBehaviour:
   dogfood: 0
   catfoodscore: {fileID: 607016020}
   dogfoodscore: {fileID: 1410703874}
+  bark: {fileID: 2017823971}
 --- !u!114 &604430626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,6 +1381,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2017823971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8084784249542454587, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
+  m_PrefabInstance: {fileID: 7155604476869481332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09438b3a2d0dfb4aa45d91fe554e059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2022205881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5915487109895448418, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
+  m_PrefabInstance: {fileID: 7155604476869481332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2022205886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022205881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fbc9bad0a2b0945a38e9cdea35af3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jord:
+    serializedVersion: 2
+    m_Bits: 8
+  medspillerlag:
+    serializedVersion: 2
+    m_Bits: 64
+  raylength: 0.95
+  leaft: 276
+  right: 275
+  up: 273
+  Speed: 3
+  JumpPower: 300
+  JumpPowerX: 0.2
+  JumpPowerY: 0.8
 --- !u!1001 &3976378802200627939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1388,6 +1431,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3379786450498837664, guid: bf76bee9dfa9e8f48a03b4acc384dd1d, type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3391498942358371947, guid: bf76bee9dfa9e8f48a03b4acc384dd1d, type: 3}
       propertyPath: m_Name
       value: colecterbel
@@ -1506,6 +1553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cat
       objectReference: {fileID: 0}
+    - target: {fileID: 4863307822250344622, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: Jumpbuildupspeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6737882315644096492, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -1559,6 +1610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2198902274979754384, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5915487109895448418, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
       propertyPath: m_Name
       value: dog
@@ -1606,7 +1661,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5915487109895448418, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 2022205886}
   m_SourcePrefab: {fileID: 100100000, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

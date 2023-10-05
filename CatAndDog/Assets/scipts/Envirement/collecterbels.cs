@@ -6,6 +6,7 @@ public class collecterbels : MonoBehaviour
 {
     // 1 dogfood 2 catfood 3 both 4 unlock
     public int type=1;
+    public int unlook = 1;
     private UI_controller controller;
     public Sprite tun;
     public Sprite bone;
@@ -68,8 +69,15 @@ public class collecterbels : MonoBehaviour
                     Destroy(gameObject);
                 }
                 break;
+            case 4:
+                if (other.tag == "dog" || other.tag == "cat")
+                {
+                    controller.Unlooker(unlook);
+                    Destroy(gameObject);
+                }
+                break;
 
-           
+
         }
     }
 }
