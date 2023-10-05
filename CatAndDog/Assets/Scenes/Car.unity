@@ -607,66 +607,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 128351451423572079, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_TagString
-      value: RightDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2453818109268569969, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2453818109268569969, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004922284810830603, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Size.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004922284810830603, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Size.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004922284810830603, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004922284810830603, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Offset.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004922284810830603, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118937828458943978, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Size.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118937828458943978, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118937828458943978, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504303119827157182, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Name
-      value: TopBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123447687619265757, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123447687619265757, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Offset.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123447687619265757, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4812281718566633497, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -711,33 +651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
-    - target: {fileID: 8361545206854493620, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_TagString
-      value: LeftDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 8441198597633881829, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8707858284246994102, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: cat
-      value: 
-      objectReference: {fileID: 2009267593}
-    - target: {fileID: 8707858284246994102, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8397073783131888258, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3506eee3a2b01f408c9367c81f223ce, type: 3}
---- !u!1 &2009267593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2536569404659080172, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
-  m_PrefabInstance: {fileID: 433312737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6985850791639633012
 PrefabInstance:
   m_ObjectHideFlags: 0
