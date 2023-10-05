@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6394989909495344754}
   - component: {fileID: 4813861212982774741}
   - component: {fileID: 670679070495906474}
-  - component: {fileID: 2198902274979754384}
+  - component: {fileID: 5186198110082024041}
   m_Layer: 7
   m_Name: dog
   m_TagString: dog
@@ -160,7 +160,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2198902274979754384
+--- !u!114 &5186198110082024041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,19 +169,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5915487109895448418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 264f2d1aa038c914381409a42ec9d5ae, type: 3}
+  m_Script: {fileID: 11500000, guid: c7fbc9bad0a2b0945a38e9cdea35af3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jord:
     serializedVersion: 2
     m_Bits: 8
+  medspillerlag:
+    serializedVersion: 2
+    m_Bits: 64
   raylength: 0.95
   leaft: 276
   right: 275
   up: 273
   Speed: 3
   JumpPower: 30
-  JumpTime: 0.3
+  JumpPowerX: 0.2
+  JumpPowerY: 0.8
 --- !u!1001 &8998218393469086602
 PrefabInstance:
   m_ObjectHideFlags: 0
