@@ -22,7 +22,7 @@ public class Movementdog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        colidersize = gameObject.GetComponent<BoxCollider2D>().size.x;
+        colidersize = gameObject.GetComponent<BoxCollider2D>().bounds.extents.x;
         //Get rigedbody frome gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
@@ -30,8 +30,8 @@ public class Movementdog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
 
-        
         if (Input.GetKeyUp(up) && isgrounded())
         {
             jump = true;
@@ -40,9 +40,9 @@ public class Movementdog : MonoBehaviour
     //check if grounded 
     private bool isgrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colidersize / 2 * .98f, raylength, 0), Vector2.right, (colidersize) * .98f, jord);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colidersize / 2 * .98f, raylength, 0), Vector2.right, (colidersize) * .98f, medspillerlag);
-        Debug.DrawRay(transform.position - new Vector3(colidersize / 2 * .98f, raylength, 0), Vector2.right * (colidersize) * .98f, Color.red, 1);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, jord);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, medspillerlag);
+        Debug.DrawRay(transform.position - new Vector3(colidersize* .98f, raylength, 0), Vector2.right * (colidersize) * 1.98f, Color.red, 1);
         if (hit == true)
         {
             if (hit.collider.tag == "jord")
