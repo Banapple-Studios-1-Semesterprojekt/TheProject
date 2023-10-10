@@ -53,7 +53,7 @@ public class Movementcat : MonoBehaviour
         }
     }
     //check if grounded 
-    private bool isgrounded()
+    public bool isgrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, jord);
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, medspillerlag);

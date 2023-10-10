@@ -11,6 +11,8 @@ TagManager:
   - RightDoor
   - LeftDoor
   - Cat
+  - cat
+  - Climbable
   layers:
   - Default
   - TransparentFX
