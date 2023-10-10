@@ -18,20 +18,27 @@ public class Movementdog : MonoBehaviour
     public float JumpPowerY = 0.8f;
     private float diretion = 1;
     private Rigidbody2D rb;
+    private BoxCollider2D boxCol;
+
+    public static Movementdog instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        colidersize = gameObject.GetComponent<BoxCollider2D>().size.x;
+        colidersize = GetComponent<BoxCollider2D>().size.x;
+        boxCol = GetComponent<BoxCollider2D>();
         //Get rigedbody frome gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-
-        
+    {   
         if (Input.GetKeyUp(up) && isgrounded())
         {
             jump = true;
@@ -40,52 +47,18 @@ public class Movementdog : MonoBehaviour
     //check if grounded 
     private bool isgrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colidersize / 2 * .98f, raylength, 0), Vector2.right, (colidersize) * .98f, jord);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colidersize / 2 * .98f, raylength, 0), Vector2.right, (colidersize) * .98f, medspillerlag);
-        Debug.DrawRay(transform.position - new Vector3(colidersize / 2 * .98f, raylength, 0), Vector2.right * (colidersize) * .98f, Color.red, 1);
-        if (hit == true)
-        {
-            if (hit.collider.tag == "jord")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        Vector3 rayPoint = transform.position + Vector3.down * boxCol.bounds.extents.y;
+        Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
+        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, jord);
 
-        }
-        else if (hit2 == true)
-        {
-            if (hit2.collider.tag == "dog" || hit2.collider.tag == "cat")
-            {
-                return true;
-            }
-            else
-            {
-                Debug.Log("okay");
-                return false;
-            }
-
-        }
-        else
-        {
-            return false;
-        }
-
+        return hit2D != null;
     }
-
-
-
-
-
 
     //reset jump 
 
 
     private void FixedUpdate()
     {
-
         //movment leaft right
         if (Input.GetKey(leaft) && isgrounded())
         {
@@ -98,6 +71,7 @@ public class Movementdog : MonoBehaviour
             rb.velocity = new Vector3(Speed, rb.velocity.y, 0);
             diretion = 1;
         }
+        
         // Move up
         if (jump == true)
         {
@@ -106,6 +80,3 @@ public class Movementdog : MonoBehaviour
         }
     }
 }
-
-
-

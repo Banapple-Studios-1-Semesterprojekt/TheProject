@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 6085522000572806173}
   - component: {fileID: 1082895961461240576}
   - component: {fileID: 4857870834328030245}
-  - component: {fileID: 1309050770427911627}
   - component: {fileID: 4863307822250344622}
-  - component: {fileID: 2500368521340261074}
   m_Layer: 6
   m_Name: cat
   m_TagString: cat
@@ -111,10 +109,10 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
+    m_Bits: 128
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &4857870834328030245
 BoxCollider2D:
@@ -161,31 +159,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1309050770427911627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2536569404659080172}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 264f2d1aa038c914381409a42ec9d5ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jord:
-    serializedVersion: 2
-    m_Bits: 8
-  medspillerlag:
-    serializedVersion: 2
-    m_Bits: 0
-  raylength: 0.55
-  leaft: 97
-  right: 100
-  up: 119
-  Speed: 3
-  JumpPower: 1.5
-  JumpTime: 0.3
 --- !u!114 &4863307822250344622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,35 +185,6 @@ MonoBehaviour:
   JumpPower: 0
   JumpMaxpower: 25
   Jumpminpower: 15
-  Jumpbuildupspeed: 40
-  JumpPowerX: 0.2
-  JumpPowerY: 0.8
---- !u!114 &2500368521340261074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2536569404659080172}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0abccd1aa209f4085c991f8ca890d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jord:
-    serializedVersion: 2
-    m_Bits: 8
-  medspillerlag:
-    serializedVersion: 2
-    m_Bits: 128
-  raylength: 0.55
-  leaft: 97
-  right: 100
-  up: 119
-  Speed: 3
-  JumpPower: 0
-  JumpMaxpower: 25
-  Jumpminpower: 15
-  Jumpbuildupspeed: 40
+  Jumpbuildupspeed: 15
   JumpPowerX: 0.2
   JumpPowerY: 0.8
