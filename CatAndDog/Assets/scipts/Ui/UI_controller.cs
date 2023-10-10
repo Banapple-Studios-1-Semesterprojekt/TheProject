@@ -9,19 +9,16 @@ public class UI_controller : MonoBehaviour
     public int dogfood = 0;
     public TMP_Text catfoodscore;
     public TMP_Text dogfoodscore;
-    public bark bark;
+    public Bark bark;
 
-    void Start()
+    private void Start()
     {
-    
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-     
     }
-
 
     public void Updatescore()
     {
@@ -35,9 +32,8 @@ public class UI_controller : MonoBehaviour
         switch (unlook)
         {
             case 1:
-                bark.canbark= true;
+                bark.canbark = true;
                 break;
         }
     }
-
 }

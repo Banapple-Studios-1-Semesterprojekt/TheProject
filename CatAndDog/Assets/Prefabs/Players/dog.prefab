@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5186198110082024041}
   m_Layer: 7
   m_Name: dog
-  m_TagString: dog
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   raylength: 0.95
-  leaft: 276
+  left: 276
   right: 275
   up: 273
   Speed: 3
@@ -241,6 +241,10 @@ PrefabInstance:
     - target: {fileID: 4491764398335842630, guid: 45b8de646d927e94dbb974ab849e86c2, type: 3}
       propertyPath: m_Name
       value: bark
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491764398335842630, guid: 45b8de646d927e94dbb974ab849e86c2, type: 3}
+      propertyPath: m_TagString
+      value: Bark
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
