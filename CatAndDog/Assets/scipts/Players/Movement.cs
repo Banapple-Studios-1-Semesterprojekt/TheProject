@@ -60,7 +60,7 @@ public class Movement : MonoBehaviour
         }
         else if (hit2 == true)
         {
-            if (hit2.collider.tag == "dog" || hit2.collider.tag == "cat")
+            if (hit2.collider.tag == "Dog" || hit2.collider.tag == "Cat")
             {
                 return true;
             }

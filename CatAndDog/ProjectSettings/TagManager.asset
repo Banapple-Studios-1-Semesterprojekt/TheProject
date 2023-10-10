@@ -4,13 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - jord
-  - dog
-  - bark
   - Car
-  - RightDoor
-  - LeftDoor
   - Cat
+  - Dog
+  - Jord
+  - Bark
   layers:
   - Default
   - TransparentFX

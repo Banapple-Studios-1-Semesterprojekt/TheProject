@@ -171,6 +171,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 4863307822250344622, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: up
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863307822250344622, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: left
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863307822250344622, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: leaft
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863307822250344622, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: right
+      value: 275
+      objectReference: {fileID: 0}
     - target: {fileID: 6737882315644096492, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
@@ -233,7 +249,7 @@ GameObject:
   - component: {fileID: 708946840}
   m_Layer: 3
   m_Name: jord
-  m_TagString: jord
+  m_TagString: Jord
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,6 +526,8 @@ MonoBehaviour:
   - {fileID: 1824822201}
   statzome: 7
   disbeforezome: 16
+  height: 5
+  smoothTime: 10
 --- !u!4 &1824822201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6737882315644096492, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
@@ -675,6 +693,14 @@ PrefabInstance:
     - target: {fileID: 4857870834328030245, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863307822250344622, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: left
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863307822250344622, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: medspillerlag.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6737882315644096492, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
       propertyPath: m_LocalPosition.x

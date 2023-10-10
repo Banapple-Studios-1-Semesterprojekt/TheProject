@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movementdog : MonoBehaviour
+public class MovementDog : MonoBehaviour
 {
     public LayerMask jord;
     public LayerMask medspillerlag;
     public float raylength = 1;
     private float colidersize = 1;
-    public KeyCode leaft;
+    public KeyCode left;
     public KeyCode right;
     public KeyCode up;
     public float Speed = 1f;
@@ -20,7 +20,7 @@ public class Movementdog : MonoBehaviour
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         colidersize = gameObject.GetComponent<BoxCollider2D>().bounds.extents.x;
         //Get rigedbody frome gameobjekt
@@ -28,24 +28,23 @@ public class Movementdog : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-     
-
         if (Input.GetKeyUp(up) && isgrounded())
         {
             jump = true;
         }
     }
-    //check if grounded 
+
+    //check if grounded
     private bool isgrounded()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, jord);
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, medspillerlag);
-        Debug.DrawRay(transform.position - new Vector3(colidersize* .98f, raylength, 0), Vector2.right * (colidersize) * 1.98f, Color.red, 1);
+        Debug.DrawRay(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right * (colidersize) * 1.98f, Color.red, 1);
         if (hit == true)
         {
-            if (hit.collider.tag == "jord")
+            if (hit.collider.tag == "Jord")
             {
                 return true;
             }
@@ -53,11 +52,10 @@ public class Movementdog : MonoBehaviour
             {
                 return false;
             }
-
         }
         else if (hit2 == true)
         {
-            if (hit2.collider.tag == "dog" || hit2.collider.tag == "cat")
+            if (hit2.collider.tag == "Dog" || hit2.collider.tag == "Cat")
             {
                 return true;
             }
@@ -66,28 +64,19 @@ public class Movementdog : MonoBehaviour
                 Debug.Log("okay");
                 return false;
             }
-
         }
         else
         {
             return false;
         }
-
     }
 
-
-
-
-
-
-    //reset jump 
-
+    //reset jump
 
     private void FixedUpdate()
     {
-
         //movment leaft right
-        if (Input.GetKey(leaft) && isgrounded())
+        if (Input.GetKey(left) && isgrounded())
         {
             rb.velocity = new Vector3(-Speed, rb.velocity.y, 0);
             diretion = -1;
@@ -106,6 +95,3 @@ public class Movementdog : MonoBehaviour
         }
     }
 }
-
-
-
