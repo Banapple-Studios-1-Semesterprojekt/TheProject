@@ -9,6 +9,7 @@ TagManager:
   - Dog
   - Bark
   - Car
+  - Water
   layers:
   - Default
   - TransparentFX
