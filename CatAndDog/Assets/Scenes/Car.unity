@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 708946840}
   m_Layer: 3
   m_Name: jord
-  m_TagString: Jord
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -524,8 +524,8 @@ MonoBehaviour:
   Players:
   - {fileID: 1233510779}
   - {fileID: 1824822201}
-  statzome: 7
-  disbeforezome: 16
+  startZoom: 5
+  disableForZoom: 16
   height: 5
   smoothTime: 10
 --- !u!4 &1824822201 stripped

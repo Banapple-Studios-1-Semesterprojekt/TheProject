@@ -5,30 +5,31 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-    private bool isPause=false;
-    public GameObject Pause_UI;
+    public GameObject pauseUI;
+
+    private bool isPause = false;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPause)
             {
                 gameObject.GetComponent<Image>().enabled = false;
-                Pause_UI.SetActive(false);
+                pauseUI.SetActive(false);
                 isPause = false;
                 Time.timeScale = 1;
             }
             else
             {
                 gameObject.GetComponent<Image>().enabled = true;
-                Pause_UI.SetActive(true);
+                pauseUI.SetActive(true);
                 isPause = true;
                 Time.timeScale = 0;
             }

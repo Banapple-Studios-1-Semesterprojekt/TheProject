@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,11 +16,11 @@ public class Rat : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //ved colistion med bark destroy rat og ved colition med players restart scene
-        if (collision.tag == "Bark")
+        if (collision.CompareTag("Bark"))
         {
             Destroy(gameObject);
         }
-        else if (collision.tag == "Cat" || collision.tag == "Dog")
+        else if (collision.CompareTag("Cat") || collision.CompareTag("Dog"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

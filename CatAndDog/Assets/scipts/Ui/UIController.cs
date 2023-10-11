@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UI_controller : MonoBehaviour
+public class UIController : MonoBehaviour
 {
-    public int catfood = 0;
-    public int dogfood = 0;
-    public TMP_Text catfoodscore;
-    public TMP_Text dogfoodscore;
+    public int catFood = 0;
+    public int dogFood = 0;
+    public TMP_Text catFoodScore;
+    public TMP_Text dogFoodScore;
     public Bark bark;
 
     private void Start()
@@ -23,16 +23,16 @@ public class UI_controller : MonoBehaviour
     public void Updatescore()
     {
         //set scorer text to score
-        catfoodscore.SetText("x " + catfood.ToString());
-        dogfoodscore.SetText("x " + dogfood.ToString());
+        catFoodScore.SetText("x " + catFood.ToString());
+        dogFoodScore.SetText("x " + dogFood.ToString());
     }
 
-    public void Unlooker(int unlook)
+    public void Unlocker(int unlock)
     {
-        switch (unlook)
+        switch (unlock)
         {
             case 1:
-                bark.canbark = true;
+                bark.canBark = true;
                 break;
         }
     }

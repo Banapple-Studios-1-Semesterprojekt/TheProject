@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour
         Debug.DrawRay(transform.position - new Vector3(gameObject.GetComponent<BoxCollider2D>().size.x / 2 * .98f, raylength, 0), Vector2.right * (gameObject.GetComponent<BoxCollider2D>().size.x) * .98f, Color.red, 1);
         if (hit == true)
         {
-            if (hit.collider.tag == "jord")
+            if (hit.collider.tag == "ground")
             {
                 return true;
             }

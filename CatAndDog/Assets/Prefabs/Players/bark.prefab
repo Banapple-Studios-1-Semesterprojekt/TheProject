@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 333048722469917744}
   - component: {fileID: 924077421504415409}
   m_Layer: 0
-  m_Name: bark
+  m_Name: Bark
   m_TagString: Bark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,6 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09438b3a2d0dfb4aa45d91fe554e059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dobark: 303
-  canbark: 0
-  barkreset: 0
+  doBark: 303
+  canBark: 0
+  barkReset: 0

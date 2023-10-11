@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4857870834328030245}
   - component: {fileID: 4863307822250344622}
   m_Layer: 6
-  m_Name: cat
+  m_Name: Cat
   m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,20 +171,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836f61ae782910445b21f02e84669dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jord:
+  ground:
     serializedVersion: 2
     m_Bits: 8
-  medspillerlag:
+  coPlayer:
     serializedVersion: 2
     m_Bits: 128
   raylength: 0.55
   left: 97
   right: 100
   up: 119
-  Speed: 3
-  JumpPower: 0
-  JumpMaxpower: 25
-  Jumpminpower: 15
-  Jumpbuildupspeed: 40
-  JumpPowerX: 0.2
-  JumpPowerY: 0.8
+  speed: 3
+  jumpPower: 0
+  jumpMaxpower: 25
+  jumpMinPower: 15
+  jumpBuildUpSpeed: 40
+  jumpPowerX: 0.2
+  jumpPowerY: 0.8

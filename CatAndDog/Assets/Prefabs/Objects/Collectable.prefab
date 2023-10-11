@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3379786450498837664}
   - component: {fileID: 3237967660727152429}
   m_Layer: 0
-  m_Name: colecterbel
+  m_Name: Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  Unlock: 1
-  tun: {fileID: 21300000, guid: 3e62a728a10157742b97737e7c9a54b9, type: 3}
+  unlook: 1
+  tuna: {fileID: 21300000, guid: 3e62a728a10157742b97737e7c9a54b9, type: 3}
   bone: {fileID: 21300000, guid: 101ea66a45356a14bb0365dafcc65ef1, type: 3}
 --- !u!60 &3237967660727152429
 PolygonCollider2D:

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bark : MonoBehaviour
 {
-    public KeyCode dobark;
-    public bool canbark = false;
-    public bool barkreset = false;
+    public KeyCode doBark;
+    public bool canBark = false;
+    public bool barkReset = false;
 
     private void Start()
     {
@@ -15,20 +15,20 @@ public class Bark : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // ved input dobark set colider til aktiv, invoke reset bark om et sekund og afspild lyd
-        if (canbark && Input.GetKeyDown(dobark) && barkreset == false)
+        // ved input doBark set colider til aktiv, invoke reset bark om et sekund og afspild lyd
+        if (canBark && Input.GetKeyDown(doBark) && barkReset == false)
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
-            barkreset = true;
-            Invoke("resetbark", 1);
+            barkReset = true;
+            Invoke("ResetBark", 1);
             gameObject.GetComponent<AudioSource>().Play();
         }
     }
 
-    public void resetbark()
+    public void ResetBark()
     {
         //set colider til indaktiv
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        barkreset = false;
+        barkReset = false;
     }
 }
