@@ -4,13 +4,11 @@ using UnityEngine;
 using Unity.VisualScripting;
 public class Movementcat : MonoBehaviour
 {
- 
-
-
     public LayerMask jord;
     public LayerMask medspillerlag;
     public float raylength = 1;
     private float colidersize = 1;
+    private BoxCollider2D boxCol;
     public KeyCode leaft;
     public KeyCode right;
     public KeyCode up;
@@ -25,12 +23,22 @@ public class Movementcat : MonoBehaviour
     private float diretion = 1;
     private Rigidbody2D rb;
 
+    public static Movementcat instance;
+
+    private void Awake()
+    {
+        instance = this;
+
+        //Get rigedbody frome gameobjekt
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         JumpPower = Jumpminpower;
-        colidersize = gameObject.GetComponent<BoxCollider2D>().bounds.extents.x;
-        //Get rigedbody frome gameobjekt
+        colidersize = gameObject.GetComponent<BoxCollider2D>().size.x;
+        //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -52,51 +60,18 @@ public class Movementcat : MonoBehaviour
             jump = true;
         }
     }
+
     //check if grounded 
     public bool isgrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, jord);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right, (colidersize) * 1.98f, medspillerlag);
-        Debug.DrawRay(transform.position - new Vector3(colidersize * .98f, raylength, 0), Vector2.right * (colidersize) * 1.98f, Color.red, 1);
-        if (hit == true)
-        {
-            if (hit.collider.tag == "jord")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        Vector3 rayPoint = transform.position + Vector3.down * boxCol.bounds.extents.y;
+        Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
+        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, jord);
 
-        }
-        else if (hit2 == true)
-        {
-            if (hit2.collider.tag == "Dog" || hit2.collider.tag == "Cat")
-            {
-                return true;
-            }
-            else
-            {
-                Debug.Log("okay");
-                return false;
-            }
-
-        }
-        else
-        {
-            return false;
-        }
-
+        return hit2D != null;
     }
 
-
-
-
-
-
     //reset jump 
-
 
     private void FixedUpdate()
     {
@@ -121,6 +96,11 @@ public class Movementcat : MonoBehaviour
             jump = false;
             JumpPower = Jumpminpower;
         }
+    }
+
+    public Rigidbody2D GetRigidbody()
+    {
+        return rb;
     }
 }
 
