@@ -18,7 +18,7 @@ public class WaterSplash : MonoBehaviour
 
     private void SpawnParticles(Vector3 pos)
     {
-        ParticleSystem PS = Instantiate(splashParticles, new Vector3(pos.x, pos.y, -1), Quaternion.identity);
+        ParticleSystem PS = Instantiate(splashParticles, new Vector3(pos.x, pos.y - 0.25f, -1), Quaternion.identity);
         PS.Play();
         Destroy(PS.gameObject, 2f);
     }
