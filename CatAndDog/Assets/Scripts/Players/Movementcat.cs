@@ -41,6 +41,7 @@ public class MovementCat : MonoBehaviour
         colliderSize = gameObject.GetComponent<BoxCollider2D>().size.x;
         //Get rigedbody frome gameobjekt
         rb = GetComponent<Rigidbody2D>();
+        boxCol = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame

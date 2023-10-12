@@ -185,8 +185,8 @@ GameObject:
   - component: {fileID: 670679070495906474}
   - component: {fileID: 1765256970178443638}
   m_Layer: 7
-  m_Name: Dog
-  m_TagString: Dog
+  m_Name: dog
+  m_TagString: dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,7 +205,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6221644858001988161}
-- {fileID: 4261789848489650936}
+  - {fileID: 4261789848489650936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6394989909495344754
@@ -344,20 +344,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fbc9bad0a2b0945a38e9cdea35af3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
+  jord:
     serializedVersion: 2
     m_Bits: 8
-  coPlayerLayer:
+  medspillerlag:
     serializedVersion: 2
     m_Bits: 64
-  rayLength: 0.95
-  left: 276
+  raylength: 0.95
+  leaft: 276
   right: 275
   up: 273
-  speed: 3
-  jumpPower: 300
-  jumpPowerX: 0.2
-  jumpPowerY: 0.8
+  Speed: 3
+  JumpPower: 300
+  JumpPowerX: 0.2
+  JumpPowerY: 0.8
 --- !u!1001 &8998218393469086602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,7 +414,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: bark
       objectReference: {fileID: 0}
-        m_RemovedComponents: []
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
