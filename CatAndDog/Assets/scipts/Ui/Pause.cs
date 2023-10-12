@@ -6,42 +6,42 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-    private bool isPause=false;
-    public GameObject Pause_UI;
+    public GameObject pauseUI;
+
+    private bool isPause = false;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPause)
             {
-                startgame();
+                startGame();
             }
             else
-            {
-                
+            { 
                 GetComponent<Image>().enabled = true;
-                Pause_UI.SetActive(true);
+                PauseUI.SetActive(true);
                 isPause = true;
                 Time.timeScale = 0;
             }
         }
     }
-    public void startgame()
+    public void startGame()
     {
      gameObject.GetComponent<Image>().enabled = false;
-     Pause_UI.SetActive(false);
+     PauseUI.SetActive(false);
      isPause = false;
      Time.timeScale = 1;
     }
 
-    public void restart_level()
+    public void restartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -1,100 +1,97 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Unity.VisualScripting;
-public class Movementcat : MonoBehaviour
+
+public class MovementCat : MonoBehaviour
 {
-    public LayerMask jord;
-    public LayerMask medspillerlag;
-    public float raylength = 1;
-    private float colidersize = 1;
-    private BoxCollider2D boxCol;
-    public KeyCode leaft;
+    public LayerMask ground;
+    public LayerMask coPlayerLayer;
+    public float rayLength = 1;
+
+    public KeyCode left;
     public KeyCode right;
     public KeyCode up;
-    public float Speed = 1f;
-    public float JumpPower = 0f;
-    public float JumpMaxpower = 1f;
-    public float Jumpminpower = 1f;
-    public float Jumpbuildupspeed = 1f;
-    private bool jump = false;
-    public float JumpPowerX = 0.2f;
-    public float JumpPowerY = 0.8f;
-    private float diretion = 1;
-    private Rigidbody2D rb;
 
-    public static Movementcat instance;
+    public float speed = 1f;
+    public float jumpPower = 0f;
+    public float jumpMaxPower = 1f;
+    public float jumpMinPower = 1f;
+    public float jumpBuildUpSpeed = 1f;
+    public float jumpPowerX = 0.2f;
+    public float jumpPowerY = 0.8f;
+
+    private float colliderSize = 1;
+    private bool jump = false;
+    private float direction = 1;
+    private Rigidbody2D rb;
+    private BoxCollider2D boxCol;
+
+
+    public static MovementCat instance;
 
     private void Awake()
     {
         instance = this;
 
-        //Get rigedbody frome gameobjekt
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        JumpPower = Jumpminpower;
-        colidersize = gameObject.GetComponent<BoxCollider2D>().size.x;
         //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    private void Start()
     {
-        
+        JumpPower = JumpMinPower;
+        coliderSize = gameObject.GetComponent<BoxCollider2D>().size.x;
+        //Get rigedbody frome gameobjekt
+        rb = GetComponent<Rigidbody2D>();
+    }
 
+    // Update is called once per frame
+    private void Update()
+    {
         //jump input
-        if (Input.GetKey(up) && isgrounded() && JumpPower < JumpMaxpower)
+        if (Input.GetKey(up) && IsGrounded() && jumpPower < jumpMaxPower)
         {
-
-            JumpPower += Jumpbuildupspeed * Time.deltaTime;
-
-
+            jumpPower += jumpBuildUpSpeed * Time.deltaTime;
         }
-        if (Input.GetKeyUp(up) && isgrounded())
+        if (Input.GetKeyUp(up) && IsGrounded())
         {
             jump = true;
         }
     }
 
-    //check if grounded 
-    public bool isgrounded()
+
+    //check if grounded
+    public bool IsGrounded()
     {
         Vector3 rayPoint = transform.position + Vector3.down * boxCol.bounds.extents.y;
         Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
-        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, jord);
+        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, Ground);
 
         return hit2D != null;
     }
 
-    //reset jump 
+    //reset jump
 
     private void FixedUpdate()
     {
-
-        //movment leaft right
-        if (Input.GetKey(leaft) && JumpPower ==Jumpminpower)
+        //movement left right
+        if (Input.GetKey(left) && jumpPower == jumpMinPower)
         {
-            rb.velocity = new Vector3(-Speed, rb.velocity.y, 0);
-            diretion = -1;
+            rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
+            direction = -1;
         }
 
-        if (Input.GetKey(right) && JumpPower == Jumpminpower)
+        if (Input.GetKey(right) && jumpPower == jumpMinPower)
         {
-            rb.velocity = new Vector3(Speed, rb.velocity.y, 0);
-            diretion = 1;
+            rb.velocity = new Vector3(speed, rb.velocity.y, 0);
+            direction = 1;
         }
 
         // Move up
         if (jump == true)
         {
-            rb.AddForce(new Vector2(JumpPower * JumpPowerX * diretion, JumpPower * JumpPowerY), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(jumpPower * jumpPowerX * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
             jump = false;
-            JumpPower = Jumpminpower;
+            jumpPower = jumpMinPower;
         }
     }
 
@@ -103,5 +100,3 @@ public class Movementcat : MonoBehaviour
         return rb;
     }
 }
-
-

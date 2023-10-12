@@ -4,24 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - jord
-  - bark
-  - Car
-  - RightDoor
-  - LeftDoor
+  - Ground
   - Cat
-  - cat
-  - Climbable
   - Dog
+  - Bark
+  - Car
+  - Water
+  - Climbable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Jord
+  - Ground
   - Water
   - UI
-  - cat
-  - dog
+  - Cat
+  - Dog
   - Car
   - 
   - 
