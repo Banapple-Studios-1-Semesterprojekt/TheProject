@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CollectableType { Bone, Tuna, Both, Unlock }
 public class collecterbels : MonoBehaviour
 {
     // 1 dogfood 2 catfood 3 both 4 unlock
-    public int type=1;
+    public CollectableType cType;
+    //public int type=1;
     public int unlook = 1;
     private UI_controller controller;
     public Sprite tun;
@@ -15,19 +17,13 @@ public class collecterbels : MonoBehaviour
     void Start()
     {
         // set collecterbel image 
-        if (type == 1)
+        if (cType == CollectableType.Bone)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = bone;
-        }else if (type == 2)
+        }else if (cType == CollectableType.Tuna)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = tun;
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
     
@@ -36,9 +32,9 @@ public class collecterbels : MonoBehaviour
     {
         // ved triggerenter chek type og forøg tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
         controller = GameObject.Find("Canvas").GetComponent<UI_controller>();
-        switch (type)
+        switch (cType)
         {
-            case 1:
+            case CollectableType.Bone:
                 if (other.tag == "dog")
                 {
                     controller.dogfood++;
@@ -49,7 +45,7 @@ public class collecterbels : MonoBehaviour
 
             break;
           
-            case 2:
+            case CollectableType.Tuna:
                 if (other.tag == "cat")
                 {
                     controller.catfood++;
@@ -60,7 +56,7 @@ public class collecterbels : MonoBehaviour
 
                 break;
             
-            case 3:
+            case CollectableType.Both:
                 if (other.tag == "dog" || other.tag == "cat")
                 {
                     controller.catfood++;
@@ -69,7 +65,7 @@ public class collecterbels : MonoBehaviour
                     Destroy(gameObject);
                 }
                 break;
-            case 4:
+            case CollectableType.Unlock:
                 if (other.tag == "dog" || other.tag == "cat")
                 {
                     controller.Unlooker(unlook);
