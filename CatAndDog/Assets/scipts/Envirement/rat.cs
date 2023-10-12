@@ -5,17 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class rat : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool Scared = false;
+    public bool MoveRight = true;
+    public float rundis = 1;
+    private Rigidbody2D rb;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        StartCoroutine(WaitAndPrint());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (MoveRight == true)
+        {
+        rb.velocity = new Vector2(-1, 0);
+        }
+        else
+        {
+        rb.velocity = new Vector2(1, 0);
+        }
     }
+    private IEnumerator WaitAndPrint( )
+    {
+        while (true)
+        {
+            
+           
+            yield return new WaitForSeconds(rundis);
+            MoveRight = false;
+            yield return new WaitForSeconds(rundis);
+            MoveRight = true;
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

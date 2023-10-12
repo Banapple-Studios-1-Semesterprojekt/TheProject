@@ -32,7 +32,7 @@ public class Movementdog : MonoBehaviour
     {
         colidersize = GetComponent<BoxCollider2D>().size.x;
         boxCol = GetComponent<BoxCollider2D>();
-        //Get rigedbody frome gameobjekt
+        //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
 

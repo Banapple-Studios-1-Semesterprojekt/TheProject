@@ -38,12 +38,14 @@ public class Movementcat : MonoBehaviour
     {
         JumpPower = Jumpminpower;
         colidersize = gameObject.GetComponent<BoxCollider2D>().size.x;
-        boxCol = GetComponent<BoxCollider2D>();
+        //Get rigedbody from gameobjekt
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
 
         //jump input
         if (Input.GetKey(up) && isgrounded() && JumpPower < JumpMaxpower)
@@ -60,7 +62,7 @@ public class Movementcat : MonoBehaviour
     }
 
     //check if grounded 
-    private bool isgrounded()
+    public bool isgrounded()
     {
         Vector3 rayPoint = transform.position + Vector3.down * boxCol.bounds.extents.y;
         Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
