@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
@@ -21,18 +22,27 @@ public class Pause : MonoBehaviour
         {
             if (isPause)
             {
-                gameObject.GetComponent<Image>().enabled = false;
-                pauseUI.SetActive(false);
-                isPause = false;
-                Time.timeScale = 1;
+                startGame();
             }
             else
-            {
-                gameObject.GetComponent<Image>().enabled = true;
-                pauseUI.SetActive(true);
+            { 
+                GetComponent<Image>().enabled = true;
+                PauseUI.SetActive(true);
                 isPause = true;
                 Time.timeScale = 0;
             }
         }
+    }
+    public void startGame()
+    {
+     gameObject.GetComponent<Image>().enabled = false;
+     PauseUI.SetActive(false);
+     isPause = false;
+     Time.timeScale = 1;
+    }
+
+    public void restartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

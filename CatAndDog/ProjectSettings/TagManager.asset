@@ -10,6 +10,7 @@ TagManager:
   - Bark
   - Car
   - Water
+  - Climbable
   layers:
   - Default
   - TransparentFX
