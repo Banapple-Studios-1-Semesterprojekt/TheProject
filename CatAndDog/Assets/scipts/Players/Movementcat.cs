@@ -3,8 +3,8 @@ using UnityEngine;
 public class MovementCat : MonoBehaviour
 {
     public LayerMask ground;
-    public LayerMask coPlayer;
-    public float raylength = 1;
+    public LayerMask coPlayerLayer;
+    public float rayLength = 1;
 
     public KeyCode left;
     public KeyCode right;
@@ -12,7 +12,7 @@ public class MovementCat : MonoBehaviour
 
     public float speed = 1f;
     public float jumpPower = 0f;
-    public float jumpMaxpower = 1f;
+    public float jumpMaxPower = 1f;
     public float jumpMinPower = 1f;
     public float jumpBuildUpSpeed = 1f;
     public float jumpPowerX = 0.2f;
@@ -22,12 +22,24 @@ public class MovementCat : MonoBehaviour
     private bool jump = false;
     private float direction = 1;
     private Rigidbody2D rb;
+    private BoxCollider2D boxCol;
+
+
+    public static MovementCat instance;
+
+    private void Awake()
+    {
+        instance = this;
+
+        //Get rigedbody from gameobjekt
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Start is called before the first frame update
     private void Start()
     {
-        jumpPower = jumpMinPower;
-        colliderSize = gameObject.GetComponent<BoxCollider2D>().bounds.extents.x;
+        JumpPower = JumpMinPower;
+        coliderSize = gameObject.GetComponent<BoxCollider2D>().size.x;
         //Get rigedbody frome gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
@@ -36,7 +48,7 @@ public class MovementCat : MonoBehaviour
     private void Update()
     {
         //jump input
-        if (Input.GetKey(up) && IsGrounded() && jumpPower < jumpMaxpower)
+        if (Input.GetKey(up) && IsGrounded() && jumpPower < jumpMaxPower)
         {
             jumpPower += jumpBuildUpSpeed * Time.deltaTime;
         }
@@ -46,46 +58,22 @@ public class MovementCat : MonoBehaviour
         }
     }
 
+
     //check if grounded
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colliderSize * .98f, raylength, 0), Vector2.right, (colliderSize) * 1.98f, ground);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colliderSize * .98f, raylength, 0), Vector2.right, (colliderSize) * 1.98f, coPlayer);
-        Debug.DrawRay(transform.position - new Vector3(colliderSize * .98f, raylength, 0), Vector2.right * (colliderSize) * 1.98f, Color.red, 1);
-        if (hit == true)
-        {
-            if (hit.collider.CompareTag("Ground"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (hit2 == true)
-        {
-            if (hit2.collider.CompareTag("Dog") || hit2.collider.CompareTag("Cat"))
-            {
-                return true;
-            }
-            else
-            {
-                Debug.Log("okay");
-                return false;
-            }
-        }
-        else
-        {
-            return false;
-        }
+        Vector3 rayPoint = transform.position + Vector3.down * boxCol.bounds.extents.y;
+        Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
+        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, ground);
+
+        return hit2D != null;
     }
 
     //reset jump
 
     private void FixedUpdate()
     {
-        //movment leaft right
+        //movement left right
         if (Input.GetKey(left) && jumpPower == jumpMinPower)
         {
             rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
@@ -105,5 +93,10 @@ public class MovementCat : MonoBehaviour
             jump = false;
             jumpPower = jumpMinPower;
         }
+    }
+
+    public Rigidbody2D GetRigidbody()
+    {
+        return rb;
     }
 }

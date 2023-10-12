@@ -5,8 +5,8 @@ using UnityEngine;
 public class MovementDog : MonoBehaviour
 {
     public LayerMask ground;
-    public LayerMask coPlayer;
-    public float raylength = 1;
+    public LayerMask coPlayerLayer;
+    public float rayLength = 1;
 
     public KeyCode left;
     public KeyCode right;
@@ -23,18 +23,29 @@ public class MovementDog : MonoBehaviour
 
     private float direction = 1;
     private Rigidbody2D rb;
+    private BoxCollider2D boxCol;
+
+    public static MovementDog instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     private void Start()
     {
-        colliderSize = gameObject.GetComponent<BoxCollider2D>().bounds.extents.x;
-        //Get rigedbody frome gameobjekt
+        coliderSize = GetComponent<BoxCollider2D>().size.x;
+        boxCol = GetComponent<BoxCollider2D>();
+        //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
+     
+
         if (Input.GetKeyUp(up) && IsGrounded())
         {
             jump = true;
@@ -44,43 +55,18 @@ public class MovementDog : MonoBehaviour
     //check if grounded
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - new Vector3(colliderSize * .98f, raylength, 0), Vector2.right, (colliderSize) * 1.98f, ground);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position - new Vector3(colliderSize * .98f, raylength, 0), Vector2.right, (colliderSize) * 1.98f, coPlayer);
-        Debug.DrawRay(transform.position - new Vector3(colliderSize * .98f, raylength, 0), Vector2.right * (colliderSize) * 1.98f, Color.red, 1);
-        if (hit == true)
-        {
-            if (hit.collider.CompareTag("Ground"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else if (hit2 == true)
-        {
-            if (hit2.collider.CompareTag("Dog") || hit2.collider.CompareTag("Cat"))
-            {
-                return true;
-            }
-            else
-            {
-                Debug.Log("okay");
-                return false;
-            }
-        }
-        else
-        {
-            return false;
-        }
+        Vector3 rayPoint = transform.position + Vector3.down * boxCol.bounds.extents.y;
+        Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
+        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, ground);
+
+        return hit2D != null;
     }
 
     //reset jump
 
     private void FixedUpdate()
     {
-        //movment leaft right
+        //movment left right
         if (Input.GetKey(left) && IsGrounded())
         {
             rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
@@ -92,6 +78,7 @@ public class MovementDog : MonoBehaviour
             rb.velocity = new Vector3(speed, rb.velocity.y, 0);
             direction = 1;
         }
+        
         // Move up
         if (jump == true)
         {

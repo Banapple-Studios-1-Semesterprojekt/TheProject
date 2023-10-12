@@ -5,7 +5,7 @@ public class Collecterbels : MonoBehaviour
     // 1 dogFood 2 catFood 3 both 4 unlock
     public int type = 1;
 
-    public int unlook = 1;
+    public int unlock = 1;
     public Sprite tuna;
     public Sprite bone;
 
@@ -32,7 +32,7 @@ public class Collecterbels : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // ved triggerenter chek type og forøg tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
+        // ved triggerenter chek type og forï¿½g tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
         controller = GameObject.Find("Canvas").GetComponent<UIController>();
         switch (type)
         {
@@ -69,7 +69,7 @@ public class Collecterbels : MonoBehaviour
             case 4:
                 if (other.CompareTag("Dog") || other.CompareTag("Cat"))
                 {
-                    controller.Unlocker(unlook);
+                    controller.Unlocker(unlock);
                     Destroy(gameObject);
                 }
                 break;
