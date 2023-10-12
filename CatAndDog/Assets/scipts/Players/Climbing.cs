@@ -8,7 +8,7 @@ public class Climbing : MonoBehaviour
     private KeyCode up;
     private KeyCode leaft;
     private KeyCode right;
-    private float gravety;
+    private float Gravety;
     public bool Startclimb = true;
     public bool Climb = false;
     private Rigidbody2D rb;
@@ -24,7 +24,7 @@ public class Climbing : MonoBehaviour
        right=MVcat.right;
        
        rb=gameObject.GetComponent<Rigidbody2D>();
-        gravety = rb.gravityScale;
+        Gravety = rb.gravityScale;
     }
 
     // Update is called once per frame
@@ -80,8 +80,9 @@ public class Climbing : MonoBehaviour
     private void StopClimp()
     {
         MVcat.enabled = true;
+        MVcat.JumpPower = MVcat.Jumpminpower;
         rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
-        rb.gravityScale = gravety;
+        rb.gravityScale = Gravety;
         rb.drag = 0;
         Startclimb = true;
 

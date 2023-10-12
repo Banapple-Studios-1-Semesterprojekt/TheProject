@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - jord
-  - dog
   - bark
   - Car
   - RightDoor
@@ -13,6 +12,7 @@ TagManager:
   - Cat
   - cat
   - Climbable
+  - Dog
   layers:
   - Default
   - TransparentFX
