@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     public Transform[] Players;
     public float startZoom = 5; // Unsure if this was what it was meaning
-    public float disableForZoom = 16; // Unsure about this one too
+    public float distanceBeforeZoom = 16; // Unsure about this one too
     public float height = 5;
 
     public float smoothTime = 10f;
@@ -26,11 +26,11 @@ public class CameraController : MonoBehaviour
         Vector3 desiredPos = new Vector3((Players[0].position.x + Players[1].position.x) / 2, camUp, -10);
         transform.position = Vector3.Lerp(transform.position, desiredPos, smoothTime * Time.deltaTime);
 
-        if (Mathf.Abs(Players[0].position.x - Players[1].position.x) > disableForZoom)
+        if (Mathf.Abs(Players[0].position.x - Players[1].position.x) > distanceBeforeZoom)
         {
-            float desiredSize = ((Mathf.Abs(Players[0].position.x - Players[1].position.x) - disableForZoom) * .28f + startZoom);
+            float desiredSize = ((Mathf.Abs(Players[0].position.x - Players[1].position.x) - distanceBeforeZoom) * .28f + startZoom);
             cameraa.orthographicSize = Mathf.Lerp(cameraa.orthographicSize, desiredSize, smoothTime * Time.deltaTime);
-            camUp = (Mathf.Abs(Players[0].position.x - Players[1].position.x) - disableForZoom) * .28f + startZoom - height;
+            camUp = (Mathf.Abs(Players[0].position.x - Players[1].position.x) - distanceBeforeZoom) * .28f + startZoom - height;
         }
     }
 }
