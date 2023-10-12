@@ -64,7 +64,7 @@ public class MovementCat : MonoBehaviour
     {
         Vector3 rayPoint = transform.position + Vector3.down * boxCol.bounds.extents.y;
         Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
-        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, Ground);
+        Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, ground);
 
         return hit2D != null;
     }
