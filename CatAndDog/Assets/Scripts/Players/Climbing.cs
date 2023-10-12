@@ -2,65 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Climbing : MonoBehaviour
 {
-    private KeyCode Up;
-    private KeyCode Leaft;
-    private KeyCode Right;
-    private float Gravety;
-    public bool Startclimb = true;
-    public bool Climb = false;
+    private KeyCode up;
+    private KeyCode left;
+    private KeyCode right;
+    private float gravity;
+    public bool startClimb = true;
+    public bool climb = false;
     private Rigidbody2D rb;
-    private Movementcat MVcat;
-   // objectets position
-    private float Pos;
+    private MovementCat moveCat;
+
+    // objectets position
+    private float pos;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-       //set Key = cat movment keys
-       MVcat= GetComponent<Movementcat>();
-       Up=MVcat.up;
-       Leaft=MVcat.leaft;
-       Right=MVcat.right;
-       //get rigedbody
-       rb=gameObject.GetComponent<Rigidbody2D>();
-        Gravety = rb.gravityScale;
+        //set Key = cat movment keys
+        moveCat = GetComponent<MovementCat>();
+        up = moveCat.up;
+        left = moveCat.left;
+        right = moveCat.right;
+        //get rigedbody
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        gravity = rb.gravityScale;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // Hvis du kan kladtre og trykker up start med at klatre
-        if (Climb == true && Input.GetKeyDown(Up)&&Startclimb==true&& MVcat.isgrounded())
+        if (climb == true && Input.GetKeyDown(up) && startClimb == true && moveCat.IsGrounded())
         {
-         MVcat.enabled = false;
-         rb.AddForce(new Vector2(0,10), ForceMode2D.Impulse);
-         rb.gravityScale = 0;
-         rb.drag = 10;
-         Startclimb = false;
-         transform.position = new Vector2 (Pos,transform.position.y);
+            moveCat.enabled = false;
+            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            rb.gravityScale = 0;
+            rb.drag = 10;
+            startClimb = false;
+            transform.position = new Vector2(pos, transform.position.y);
         }
-
-        
     }
 
     private void FixedUpdate()
     {
         // hvis du klatre kan du gå op og ned med key up og down
-        if (Startclimb == false && Input.GetKey(Up)&&Climb==true)
-        {rb.velocity = new Vector2(0,5);}
-        
-        if (Startclimb == false && Input.GetKey(KeyCode.S))
-        {rb.velocity = new Vector2(0, -5);}
+        if (startClimb == false && Input.GetKey(up) && climb == true)
+        { rb.velocity = new Vector2(0, 5); }
+
+        if (startClimb == false && Input.GetKey(KeyCode.S))
+        { rb.velocity = new Vector2(0, -5); }
 
         // hvis du klatre og prøver at gå til side stop med at klatre
-        if (Input.GetKey(Leaft)&&Startclimb==false)
+        if (Input.GetKey(left) && startClimb == false)
         {
             StopClimp();
-
         }
-        if (Input.GetKey(Right) && Startclimb == false)
+        if (Input.GetKey(right) && startClimb == false)
         {
             StopClimp();
         }
@@ -69,29 +67,30 @@ public class Climbing : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // hvis du colidere med en overflade du kan klatre på sæt climb til true
-        if (collision.CompareTag("Climbable")){
-        Climb = true;
-        Pos=collision.transform.position.x;
+        if (collision.CompareTag("Climbable"))
+        {
+            climb = true;
+            pos = collision.transform.position.x;
         }
-            
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         // hvis du Stopper colidere med en overflade du kan klatre på sæt climb til true
         if (collision.CompareTag("Climbable"))
         {
-            Climb = false;
+            climb = false;
         }
     }
+
     private void StopClimp()
     {
-        //stop med at klatrer 
-        MVcat.enabled = true;
-        MVcat.JumpPower = MVcat.Jumpminpower;
+        //stop med at klatrer
+        moveCat.enabled = true;
+        moveCat.jumpPower = moveCat.jumpMinPower;
         rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
-        rb.gravityScale = Gravety;
+        rb.gravityScale = gravity;
         rb.drag = 0;
-        Startclimb = true;
-
+        startClimb = true;
     }
 }

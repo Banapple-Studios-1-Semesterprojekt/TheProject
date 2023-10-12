@@ -175,10 +175,10 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 8
-  coPlayer:
+  coPlayerLayer:
     serializedVersion: 2
     m_Bits: 64
-  raylength: 0.95
+  rayLength: 1
   left: 276
   right: 275
   up: 273

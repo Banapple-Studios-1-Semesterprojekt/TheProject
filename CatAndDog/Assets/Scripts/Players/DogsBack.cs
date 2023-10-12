@@ -9,26 +9,26 @@ public class DogsBack : MonoBehaviour
 
     private void Start()
     {
-        catRB = Movementcat.instance.GetRigidbody();
+        catRB = MovementCat.instance.GetRigidbody();
         collide = GetComponent<Collider2D>();
     }
 
-    IEnumerator CheckIfCatMoves()
+    private IEnumerator CheckIfCatMoves()
     {
         yield return new WaitForSeconds(0.2f);
-        if(catRB.velocity.sqrMagnitude > 0.01f && catIsOnBack)
+        if (catRB.velocity.sqrMagnitude > 0.01f && catIsOnBack)
         {
             StartCoroutine(DisableBack());
             catIsOnBack = false;
         }
 
-        if(catIsOnBack) 
+        if (catIsOnBack)
         {
             StartCoroutine(CheckIfCatMoves());
         }
     }
 
-    IEnumerator DisableBack()
+    private IEnumerator DisableBack()
     {
         collide.enabled = false;
         yield return new WaitForSeconds(1);
@@ -37,7 +37,7 @@ public class DogsBack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.CompareTag("cat"))
+        if (collision.transform.CompareTag("Cat"))
         {
             catIsOnBack = true;
             StartCoroutine(CheckIfCatMoves());
@@ -46,7 +46,7 @@ public class DogsBack : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.transform.CompareTag("cat"))
+        if (collision.transform.CompareTag("Cat"))
         {
             catIsOnBack = false;
         }

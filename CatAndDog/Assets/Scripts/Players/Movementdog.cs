@@ -35,17 +35,15 @@ public class MovementDog : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        coliderSize = GetComponent<BoxCollider2D>().size.x;
+        colliderSize = GetComponent<BoxCollider2D>().size.x;
         boxCol = GetComponent<BoxCollider2D>();
         //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-     
-
         if (Input.GetKeyUp(up) && IsGrounded())
         {
             jump = true;
@@ -78,7 +76,7 @@ public class MovementDog : MonoBehaviour
             rb.velocity = new Vector3(speed, rb.velocity.y, 0);
             direction = 1;
         }
-        
+
         // Move up
         if (jump == true)
         {

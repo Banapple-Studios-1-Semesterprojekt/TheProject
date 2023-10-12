@@ -24,7 +24,6 @@ public class MovementCat : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D boxCol;
 
-
     public static MovementCat instance;
 
     private void Awake()
@@ -38,8 +37,8 @@ public class MovementCat : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        JumpPower = JumpMinPower;
-        coliderSize = gameObject.GetComponent<BoxCollider2D>().size.x;
+        jumpPower = jumpMinPower;
+        colliderSize = gameObject.GetComponent<BoxCollider2D>().size.x;
         //Get rigedbody frome gameobjekt
         rb = GetComponent<Rigidbody2D>();
     }
@@ -57,7 +56,6 @@ public class MovementCat : MonoBehaviour
             jump = true;
         }
     }
-
 
     //check if grounded
     public bool IsGrounded()
