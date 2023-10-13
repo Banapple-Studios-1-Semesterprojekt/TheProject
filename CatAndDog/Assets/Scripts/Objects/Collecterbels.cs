@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum CollectableType { Bone, Tuna, Both, Unlock }
+
+public enum CollectableType
+{ Bone, Tuna, Both, Unlock }
 
 public class Collecterbels : MonoBehaviour
 {
@@ -17,20 +19,18 @@ public class Collecterbels : MonoBehaviour
     private UIController controller;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // set collectable image
         if (cType == CollectableType.Bone)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = bone;
-        }else if (cType == CollectableType.Tuna)
+        }
+        else if (cType == CollectableType.Tuna)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = tuna;
         }
     }
-
-        }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
