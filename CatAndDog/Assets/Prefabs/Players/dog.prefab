@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3404365472178623465}
   - component: {fileID: 8139231771155148640}
   - component: {fileID: 8809088599404379986}
+  - component: {fileID: 604193439218332164}
   m_Layer: 2
   m_Name: Dogs Back
   m_TagString: Untagged
@@ -117,7 +118,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -171,6 +172,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb497df628a08864bbf4c78973c20329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!251 &604193439218332164
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276756079134187778}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 172
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5915487109895448418
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,9 +375,9 @@ MonoBehaviour:
   right: 275
   up: 273
   speed: 3
-  jumpPower: 300
-  jumpPowerX: 0.2
-  jumpPowerY: 0.8
+  jumpPower: 350
+  jumpPowerX: 0
+  jumpPowerY: 1
 --- !u!1001 &8998218393469086602
 PrefabInstance:
   m_ObjectHideFlags: 0

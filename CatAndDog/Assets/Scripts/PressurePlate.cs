@@ -45,7 +45,7 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {   //"collision" = What is colliding with me? (The object the script is attaced to). 
-      if (collision.CompareTag("dog") && dogsPlate)
+      if (collision.CompareTag("Dog") && dogsPlate)
         {
             onPlate = !onPlate; //Sets "onPlate" to true.
             PlateDown();
@@ -65,7 +65,7 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Cat") || collision.CompareTag("dog"))
+        if (collision.CompareTag("Cat") || collision.CompareTag("Dog"))
         {
             onPlate = false;
             PlateUp();
