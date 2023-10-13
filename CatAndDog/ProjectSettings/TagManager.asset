@@ -4,14 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Car
+  - Ground
   - Cat
+  - Dog
+  - Bark
+  - Car
+  - Water
+  - Climbable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+  - Ground
   - Water
   - UI
+  - Cat
+  - Dog
   - Car
   - PressurePlates
   - 

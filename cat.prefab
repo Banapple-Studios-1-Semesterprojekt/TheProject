@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 6085522000572806173}
   - component: {fileID: 1082895961461240576}
   - component: {fileID: 4857870834328030245}
-  - component: {fileID: 4902897989294392895}
   - component: {fileID: 4863307822250344622}
   m_Layer: 6
-  m_Name: Cat
-  m_TagString: Cat
+  m_Name: cat
+  m_TagString: cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.55, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.5453616, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -160,20 +159,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4902897989294392895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2536569404659080172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bcd0912f82852148bc3db45584f22f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startClimb: 1
-  climb: 0
 --- !u!114 &4863307822250344622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,20 +171,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836f61ae782910445b21f02e84669dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
+  jord:
     serializedVersion: 2
     m_Bits: 136
-  coPlayerLayer:
+  medspillerlag:
     serializedVersion: 2
     m_Bits: 128
-  rayLength: 0.55
-  left: 97
+  raylength: 0.55
+  leaft: 97
   right: 100
   up: 119
-  speed: 5
-  jumpPower: 0
-  jumpMaxPower: 25
-  jumpMinPower: 15
-  jumpBuildUpSpeed: 40
-  jumpPowerX: 0.2
-  jumpPowerY: 0.8
+  Speed: 3
+  JumpPower: 0
+  JumpMaxpower: 25
+  Jumpminpower: 15
+  Jumpbuildupspeed: 15
+  JumpPowerX: 0.2
+  JumpPowerY: 0.8
