@@ -4,23 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - jord
-  - dog
-  - bark
   - Car
-  - RightDoor
-  - LeftDoor
   - Cat
-  - cat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Jord
   - Water
   - UI
-  - cat
-  - dog
   - Car
   - PressurePlates
   - 
