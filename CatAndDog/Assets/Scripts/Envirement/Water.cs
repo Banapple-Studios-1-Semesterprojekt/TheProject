@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    public SpriteRenderer cat;
+    private SpriteRenderer cat;
 
     public Color originalColor;
 
@@ -12,6 +12,7 @@ public class Water : MonoBehaviour
     {
         if (other.CompareTag("Cat"))
         {
+            cat=other.GetComponent<SpriteRenderer>();
             cat.color = new Color(1, 0, 0, 1);
         }
     }
