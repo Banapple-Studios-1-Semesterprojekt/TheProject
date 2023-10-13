@@ -1,80 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public enum CollectableType { Bone, Tuna, Both, Unlock }
-
-public class Collecterbels : MonoBehaviour
+public class collecterbels : MonoBehaviour
 {
-    // 1 dogFood 2 catFood 3 both 4 unlock
+    // 1 dogfood 2 catfood 3 both 4 unlock
     public CollectableType cType;
-
-    //public int type = 1;
-
+    //public int type=1;
     public int unlock = 1;
     public Sprite tuna;
     public Sprite bone;
-
     private UIController controller;
 
     // Start is called before the first frame update
     void Start()
     {
-        // set collectable image
+        // set collecterbel image 
         if (cType == CollectableType.Bone)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = bone;
         }else if (cType == CollectableType.Tuna)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = tuna;
+            gameObject.GetComponent<SpriteRenderer>().sprite = tun;
         }
+        
     }
-
-        }
-
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         // ved triggerenter chek type og for�g tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
-        controller = GameObject.Find("Canvas").GetComponent<UIController>();
+        controller = GameObject.Find("Canvas").GetComponent<UI_controller>();
         switch (cType)
         {
             case CollectableType.Bone:
-                if (other.CompareTag("Dog"))
+                if (other.tag == "dog")
                 {
-                    controller.dogFood++;
+                    controller.dogfood++;
                     controller.Updatescore();
                     Destroy(gameObject);
+                    
                 }
 
-                break;
-
+            break;
+          
             case CollectableType.Tuna:
-                if (other.CompareTag("Cat"))
+                if (other.tag == "cat")
                 {
-                    controller.catFood++;
+                    controller.catfood++;
                     controller.Updatescore();
                     Destroy(gameObject);
+                   
                 }
 
                 break;
-
+            
             case CollectableType.Both:
-                if (other.CompareTag("Dog") || other.CompareTag("Cat"))
+                if (other.tag == "dog" || other.tag == "cat")
                 {
-                    controller.catFood++;
-                    controller.dogFood++;
+                    controller.catfood++;
+                    controller.dogfood++;
                     controller.Updatescore();
                     Destroy(gameObject);
                 }
                 break;
-
             case CollectableType.Unlock:
-                if (other.CompareTag("Dog") || other.CompareTag("Cat"))
+                if (other.tag == "dog" || other.tag == "cat")
                 {
-                    controller.Unlocker(unlock);
+                    controller.Unlooker(unlook);
                     Destroy(gameObject);
                 }
                 break;
+
+
         }
     }
 }
