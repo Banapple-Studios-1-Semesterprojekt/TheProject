@@ -11,7 +11,7 @@ public class Climbing : MonoBehaviour
     public bool startClimb = true;
     public bool climb = false;
     private Rigidbody2D rb;
-    private MovementCat moveCat;
+    private Movement moveCat;
 
     // objectets position
     private float pos;
@@ -20,7 +20,7 @@ public class Climbing : MonoBehaviour
     private void Start()
     {
         //set Key = cat movment keys
-        moveCat = GetComponent<MovementCat>();
+        moveCat = GetComponent<Movement>();
         up = moveCat.up;
         left = moveCat.left;
         right = moveCat.right;
@@ -87,7 +87,7 @@ public class Climbing : MonoBehaviour
     {
         //stop med at klatrer
         moveCat.enabled = true;
-        moveCat.jumpPower = moveCat.jumpMinPower;
+        moveCat.jumpPower = moveCat.Cat_jumpMinPower;
         rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         rb.gravityScale = gravity;
         rb.drag = 0;
