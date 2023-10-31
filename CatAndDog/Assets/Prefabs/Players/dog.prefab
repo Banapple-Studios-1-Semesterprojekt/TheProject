@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3404365472178623465}
   - component: {fileID: 8139231771155148640}
   - component: {fileID: 8809088599404379986}
+  - component: {fileID: 8804792141828764844}
   m_Layer: 2
   m_Name: Dogs Back
   m_TagString: Untagged
@@ -117,7 +118,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -171,6 +172,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb497df628a08864bbf4c78973c20329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!251 &8804792141828764844
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276756079134187778}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 172
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5915487109895448418
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,9 +203,9 @@ GameObject:
   - component: {fileID: 6394989909495344754}
   - component: {fileID: 4813861212982774741}
   - component: {fileID: 670679070495906474}
-  - component: {fileID: 1765256970178443638}
+  - component: {fileID: 7124462739628976456}
   m_Layer: 7
-  m_Name: Dog
+  m_Name: dog
   m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6221644858001988161}
-- {fileID: 4261789848489650936}
+  - {fileID: 4261789848489650936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6394989909495344754
@@ -332,7 +352,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1765256970178443638
+--- !u!114 &7124462739628976456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,7 +361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5915487109895448418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fbc9bad0a2b0945a38e9cdea35af3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 70221d74e2a3b1140b58711c663ed557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ground:
@@ -350,14 +370,16 @@ MonoBehaviour:
   coPlayerLayer:
     serializedVersion: 2
     m_Bits: 64
-  rayLength: 0.95
   left: 276
   right: 275
   up: 273
-  speed: 3
-  jumpPower: 300
-  jumpPowerX: 0.2
-  jumpPowerY: 0.8
+  speed: 5
+  jumpPower: 400
+  Cat_jumpMaxPower: 1
+  Cat_jumpMinPower: 1
+  Cat_jumpBuildUpSpeed: 1
+  jumpPowerX: 0.4
+  jumpPowerY: 0.6
 --- !u!1001 &8998218393469086602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,6 +391,10 @@ PrefabInstance:
     - target: {fileID: 333048722469917744, guid: 45b8de646d927e94dbb974ab849e86c2, type: 3}
       propertyPath: m_Radius
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 924077421504415409, guid: 45b8de646d927e94dbb974ab849e86c2, type: 3}
+      propertyPath: canBark
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3078121270198694347, guid: 45b8de646d927e94dbb974ab849e86c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -414,7 +440,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: bark
       objectReference: {fileID: 0}
-        m_RemovedComponents: []
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -68,7 +68,6 @@ public class MovementCat : MonoBehaviour
         return hit2D != null;
     }
 
-    //reset jump
 
     private void FixedUpdate()
     {

@@ -9,7 +9,7 @@ public class DogsBack : MonoBehaviour
 
     private void Start()
     {
-        catRB = MovementCat.instance.GetRigidbody();
+        catRB = GameObject.FindGameObjectWithTag("Cat").GetComponent<Rigidbody2D>();
         collide = GetComponent<Collider2D>();
     }
 

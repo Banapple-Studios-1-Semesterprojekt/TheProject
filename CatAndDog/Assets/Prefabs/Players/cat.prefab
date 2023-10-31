@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1082895961461240576}
   - component: {fileID: 4857870834328030245}
   - component: {fileID: 4902897989294392895}
-  - component: {fileID: 4863307822250344622}
+  - component: {fileID: 3822736130065858127}
   m_Layer: 6
-  m_Name: Cat
+  m_Name: cat
   m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startClimb: 1
   climb: 0
---- !u!114 &4863307822250344622
+--- !u!114 &3822736130065858127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,23 +183,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2536569404659080172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 836f61ae782910445b21f02e84669dce, type: 3}
+  m_Script: {fileID: 11500000, guid: 70221d74e2a3b1140b58711c663ed557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 72
   coPlayerLayer:
     serializedVersion: 2
     m_Bits: 128
-  rayLength: 0.55
   left: 97
   right: 100
   up: 119
   speed: 5
   jumpPower: 0
-  jumpMaxPower: 25
-  jumpMinPower: 15
-  jumpBuildUpSpeed: 40
+  Cat_jumpMaxPower: 25
+  Cat_jumpMinPower: 15
+  Cat_jumpBuildUpSpeed: 20
   jumpPowerX: 0.2
   jumpPowerY: 0.8
