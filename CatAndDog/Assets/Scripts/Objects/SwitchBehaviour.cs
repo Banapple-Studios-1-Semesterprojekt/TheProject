@@ -59,7 +59,7 @@ public class SwitchBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("dog"))
+        if (collision.CompareTag("Dog"))
         {
             _isPressingSwitch = !_isPressingSwitch;
 
@@ -76,7 +76,7 @@ public class SwitchBehaviour : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("dog"))
+        if (collision.CompareTag("Dog"))
         {
             StartCoroutine(SwitchUpDelay(_switchDelay));
         }
