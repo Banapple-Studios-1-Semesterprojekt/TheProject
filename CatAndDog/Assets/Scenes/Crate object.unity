@@ -561,6 +561,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2819237845935851922, guid: 0e2efbcf334d509448c062b8007ccbef, type: 3}
+      propertyPath: pushPower
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3195689900185514603, guid: 0e2efbcf334d509448c062b8007ccbef, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.8999858
@@ -612,6 +616,18 @@ PrefabInstance:
     - target: {fileID: 6801824976672804107, guid: 0e2efbcf334d509448c062b8007ccbef, type: 3}
       propertyPath: m_Name
       value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975243107448986534, guid: 0e2efbcf334d509448c062b8007ccbef, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975243107448986534, guid: 0e2efbcf334d509448c062b8007ccbef, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975243107448986534, guid: 0e2efbcf334d509448c062b8007ccbef, type: 3}
+      propertyPath: m_LinearDrag
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
