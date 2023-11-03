@@ -12,10 +12,12 @@ GameObject:
   - component: {fileID: 6085522000572806173}
   - component: {fileID: 1082895961461240576}
   - component: {fileID: 4857870834328030245}
+  - component: {fileID: 3292686905359954716}
   - component: {fileID: 4902897989294392895}
   - component: {fileID: 3822736130065858127}
+  - component: {fileID: 9039960796492567580}
   m_Layer: 6
-  m_Name: cat
+  m_Name: Cat
   m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,6 +162,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3292686905359954716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536569404659080172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7249b1be2963d024dac6751d074ee873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4902897989294392895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,13 +202,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 136
   coPlayerLayer:
     serializedVersion: 2
     m_Bits: 128
   left: 97
   right: 100
   up: 119
+  Cat_down: 115
   speed: 5
   jumpPower: 0
   Cat_jumpMaxPower: 25
@@ -202,3 +217,24 @@ MonoBehaviour:
   Cat_jumpBuildUpSpeed: 20
   jumpPowerX: 0.2
   jumpPowerY: 0.8
+--- !u!95 &9039960796492567580
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536569404659080172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca0fc02e1a73dcc4d9cac3664a3ed401, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

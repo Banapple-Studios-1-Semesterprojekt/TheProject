@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 670679070495906474}
   - component: {fileID: 7124462739628976456}
   m_Layer: 7
-  m_Name: dog
+  m_Name: Dog
   m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,6 +373,7 @@ MonoBehaviour:
   left: 276
   right: 275
   up: 273
+  Cat_down: 274
   speed: 5
   jumpPower: 400
   Cat_jumpMaxPower: 1

@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &44599803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2536569404659080172, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
-  m_PrefabInstance: {fileID: 1310680192}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &74036729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,14 +1514,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
-    - target: {fileID: 3822736130065858127, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
-      propertyPath: Cat_down
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 3822736130065858127, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
-      propertyPath: ground.m_Bits
-      value: 136
-      objectReference: {fileID: 0}
     - target: {fileID: 6737882315644096492, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.092873
@@ -1570,52 +1557,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2536569404659080172, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1310680200}
-    - targetCorrespondingSourceObject: {fileID: 2536569404659080172, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1310680194}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
 --- !u!4 &1310680193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6737882315644096492, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
   m_PrefabInstance: {fileID: 1310680192}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1310680194
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44599803}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca0fc02e1a73dcc4d9cac3664a3ed401, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1310680200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44599803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7249b1be2963d024dac6751d074ee873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1350817216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,10 +1699,6 @@ PrefabInstance:
     - target: {fileID: 6916001092127203681, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7124462739628976456, guid: a341fef446264fc4591b0db5a999b5e3, type: 3}
-      propertyPath: Cat_down
-      value: 274
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
