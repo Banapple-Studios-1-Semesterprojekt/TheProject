@@ -9,15 +9,11 @@ public class UIController : MonoBehaviour
     public int dogFood = 0;
     public TMP_Text catFoodScore;
     public TMP_Text dogFoodScore;
-    public Bark bark;
+    private Bark bark;
 
     private void Start()
     {
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
+        bark = FindAnyObjectByType<Bark>();
     }
 
     public void Updatescore()
