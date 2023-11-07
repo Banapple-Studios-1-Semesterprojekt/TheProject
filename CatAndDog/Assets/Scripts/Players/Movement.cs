@@ -85,11 +85,19 @@ public class Movement : MonoBehaviour
             }
         }else
         {
-            if (Input.GetKeyUp(up) && IsGrounded())
+            if (Input.GetKeyUp(up) && IsGrounded() && delayJumpCoroutine == null)
             {
-                jump = true;
+                delayJumpCoroutine = StartCoroutine(DelayJump());
             }
         }
+    }
+
+    Coroutine delayJumpCoroutine;
+    IEnumerator DelayJump()
+    {
+        jump = true;
+        yield return new WaitForSeconds(1f);
+        delayJumpCoroutine = null;
     }
 
     //check if grounded
