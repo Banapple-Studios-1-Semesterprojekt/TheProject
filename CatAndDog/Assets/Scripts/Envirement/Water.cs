@@ -5,23 +5,26 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     private SpriteRenderer cat;
-
     public Color originalColor;
+    [SerializeField] private float forcePower = 5;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Cat"))
         {
-            cat=other.GetComponent<SpriteRenderer>();
-            cat.color = new Color(1, 0, 0, 1);
+            StartCoroutine(PushCatBack(other.GetComponent<Movement>()));
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    IEnumerator PushCatBack(Movement movement)
     {
-        if (other.CompareTag("Cat"))
-        {
-            cat.color = originalColor;
-        }
+        movement.enabled = false;
+        movement.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 1) * forcePower, ForceMode2D.Impulse);
+        cat.color = new Color(1, 0, 0);
+
+        yield return new WaitForSeconds(1.5f);
+
+        cat.color = originalColor;
+        movement.enabled = true;
     }
 }
