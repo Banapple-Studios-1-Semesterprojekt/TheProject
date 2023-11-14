@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1704433784919451410}
   - component: {fileID: 731726987583384524}
   - component: {fileID: 5951663010383270991}
-  - component: {fileID: 3622539090174861971}
   - component: {fileID: 1168491642672064208}
   - component: {fileID: 6368814981308297374}
+  - component: {fileID: 1290096403292030137}
   m_Layer: 0
   m_Name: WaterPuddle 1
   m_TagString: Water
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: cf326fcbf73a1bd46a74634c4a7d07fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,19 +109,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3622539090174861971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3067717439733101701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9015e7bdab816a842b64891f9888a4ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalColor: {r: 1, g: 0.54509807, b: 0, a: 1}
 --- !u!61 &1168491642672064208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,3 +168,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splashParticles: {fileID: 5535069844142253564, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
   onlyForPlayers: 0
+--- !u!114 &1290096403292030137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067717439733101701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9015e7bdab816a842b64891f9888a4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
