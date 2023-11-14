@@ -29,6 +29,7 @@ public class Movement : MonoBehaviour
     private float direction = 1;
     private Rigidbody2D rb;
     private BoxCollider2D boxCol;
+
     
 
     public static Movement instance;
