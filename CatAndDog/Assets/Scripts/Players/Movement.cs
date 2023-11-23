@@ -22,13 +22,14 @@ public class Movement : MonoBehaviour
     public float Cat_jumpBuildUpSpeed = 1f;
     public float jumpPowerX = 0.2f;
     public float jumpPowerY = 0.8f;
-
+    private Vector2 boxColliderSize;
 
     private float colliderSize = 1;
     private bool jump = false;
     private float direction = 1;
     private Rigidbody2D rb;
     private BoxCollider2D boxCol;
+    private SpriteRenderer visualSprite;
 
     
 
@@ -40,6 +41,7 @@ public class Movement : MonoBehaviour
 
         //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
+        visualSprite = GetComponent<SpriteRenderer>();
         
     }
 
@@ -55,7 +57,8 @@ public class Movement : MonoBehaviour
         jumpPower = Cat_jumpMinPower;
         }
         
-        colliderSize = gameObject.GetComponent<BoxCollider2D>().size.x;
+        colliderSize = GetComponent<BoxCollider2D>().size.x;
+        boxColliderSize = GetComponent<BoxCollider2D>().size;
         boxCol = GetComponent<BoxCollider2D>();
     }
 
@@ -65,13 +68,11 @@ public class Movement : MonoBehaviour
         // If iscat og isgrounded  og du trykker cat_down ned Så set kattens boxcolider til havld størelse, hvis ikke reset boxcolider
         if (Input.GetKeyDown(Cat_down) && IsCat && IsGrounded())
         {
-           boxCol.size = new Vector2(1, .5f);
-           boxCol.offset = new Vector2(0, -0.2462f);
+            boxCol.size = boxColliderSize / 2;
         }
         if (Input.GetKeyUp(Cat_down) && IsCat)
         {
-            boxCol.size = new Vector2(1, 1);
-            boxCol.offset = new Vector2(0, 0);
+            boxCol.size = boxColliderSize;
         }
 
         //Activate jump
@@ -92,6 +93,14 @@ public class Movement : MonoBehaviour
                 delayJumpCoroutine = StartCoroutine(DelayJump());
             }
         }
+
+        UpdateSpriteFlip();
+    }
+
+    private void UpdateSpriteFlip()
+    {
+        if(rb.velocity.x < -0.1f ) { visualSprite.flipX = true; }
+        else if(rb.velocity.x > 0.1f ) { visualSprite.flipX = false; }
     }
 
     Coroutine delayJumpCoroutine;
@@ -106,7 +115,7 @@ public class Movement : MonoBehaviour
     public bool IsGrounded()
     {
         Vector3 rayPoint = transform.position + Vector3.down * (boxCol.bounds.extents.y-boxCol.offset.y);
-        Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.3f);
+        Vector2 boxSize = new Vector2(boxCol.bounds.extents.x * 2, 0.8f);
         Collider2D hit2D = Physics2D.OverlapBox(rayPoint, boxSize, 0, ground);
 
         return hit2D != null;
