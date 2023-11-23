@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5276756079134187778}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.331, y: 0.153, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4906, z: 0}
   m_LocalScale: {x: 1, y: 0.0186333, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.31826448, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29802832, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &8139231771155148640
 Rigidbody2D:
@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 4813861212982774741}
   - component: {fileID: 670679070495906474}
   - component: {fileID: 7124462739628976456}
+  - component: {fileID: 5001251291859992483}
   m_Layer: 7
   m_Name: Dog
   m_TagString: Dog
@@ -221,7 +222,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.52, y: -2.0742404, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1.8485}
+  m_LocalScale: {x: 6.6956367, y: 6.0170527, z: 1.8485}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6221644858001988161}
@@ -339,7 +340,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000029802322, y: 0.0048043504}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -350,7 +351,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33699948, y: 0.33699948}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7124462739628976456
 MonoBehaviour:
@@ -381,6 +382,27 @@ MonoBehaviour:
   Cat_jumpBuildUpSpeed: 1
   jumpPowerX: 0.4
   jumpPowerY: 0.6
+--- !u!95 &5001251291859992483
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915487109895448418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad0a45094dfcc814f8cef840ddaaa43f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8998218393469086602
 PrefabInstance:
   m_ObjectHideFlags: 0
