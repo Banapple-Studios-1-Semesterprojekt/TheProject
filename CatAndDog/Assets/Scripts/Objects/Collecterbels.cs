@@ -42,6 +42,7 @@ public class Collecterbels : MonoBehaviour
                 if (other.CompareTag("Dog"))
                 {
                     controller.dogFood++;
+                    controller.scoretimerdog = 5;
                     controller.Updatescore();
                     Destroy(gameObject);
                 }
@@ -51,6 +52,7 @@ public class Collecterbels : MonoBehaviour
             case CollectableType.Tuna:
                 if (other.CompareTag("Cat"))
                 {
+                    controller.scoretimercat = 5;
                     controller.catFood++;
                     controller.Updatescore();
                     Destroy(gameObject);
@@ -61,6 +63,8 @@ public class Collecterbels : MonoBehaviour
             case CollectableType.Both:
                 if (other.CompareTag("Dog") || other.CompareTag("Cat"))
                 {
+                    controller.scoretimercat = 5;
+                    controller.scoretimerdog = 5;
                     controller.catFood++;
                     controller.dogFood++;
                     controller.Updatescore();
