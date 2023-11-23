@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 333048722469917744}
   - component: {fileID: 924077421504415409}
   m_Layer: 0
-  m_Name: Bark
+  m_Name: bark
   m_TagString: Bark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

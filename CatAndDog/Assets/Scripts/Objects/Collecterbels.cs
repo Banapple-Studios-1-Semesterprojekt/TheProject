@@ -17,10 +17,12 @@ public class Collecterbels : MonoBehaviour
     public Sprite bone;
 
     private UIController controller;
+    private AudioSource pickUpCollectible;
 
     // Start is called before the first frame update
     private void Start()
     {
+        pickUpCollectible = GetComponent<AudioSource>();
         // set collectable image
         if (cType == CollectableType.Bone)
         {
@@ -34,6 +36,10 @@ public class Collecterbels : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Dog") || other.CompareTag("Cat"))
+        {
+            pickUpCollectible.Play();
+        }
         // ved triggerenter chek type og for�g tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
         controller = GameObject.Find("Canvas").GetComponent<UIController>();
         switch (cType)
@@ -42,6 +48,7 @@ public class Collecterbels : MonoBehaviour
                 if (other.CompareTag("Dog"))
                 {
                     controller.dogFood++;
+                    controller.scoretimerdog = 5;
                     controller.Updatescore();
                     Destroy(gameObject);
                 }
@@ -51,6 +58,7 @@ public class Collecterbels : MonoBehaviour
             case CollectableType.Tuna:
                 if (other.CompareTag("Cat"))
                 {
+                    controller.scoretimercat = 5;
                     controller.catFood++;
                     controller.Updatescore();
                     Destroy(gameObject);
@@ -61,6 +69,8 @@ public class Collecterbels : MonoBehaviour
             case CollectableType.Both:
                 if (other.CompareTag("Dog") || other.CompareTag("Cat"))
                 {
+                    controller.scoretimercat = 5;
+                    controller.scoretimerdog = 5;
                     controller.catFood++;
                     controller.dogFood++;
                     controller.Updatescore();

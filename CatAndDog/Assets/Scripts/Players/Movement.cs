@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,7 @@ public class Movement : MonoBehaviour
     private float direction = 1;
     private Rigidbody2D rb;
     private BoxCollider2D boxCol;
+
     
 
     public static Movement instance;
@@ -61,7 +63,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // If iscat og isgrounded  og du trykker cat_down ned Så set kattens boxcolider til havld størelse, hvis ikke reset boxcolider
-        if (Input.GetKeyDown(Cat_down)&&IsCat&&IsGrounded())
+        if (Input.GetKeyDown(Cat_down) && IsCat && IsGrounded())
         {
            boxCol.size = new Vector2(1, .5f);
            boxCol.offset = new Vector2(0, -0.2462f);
