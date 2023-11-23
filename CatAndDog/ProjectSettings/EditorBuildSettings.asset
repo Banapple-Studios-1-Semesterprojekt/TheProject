@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 6158ed4f46c71854c8af02c4e3bb1e97
   - enabled: 1
-    path: Assets/Scenes/EveryScene.unity
-    guid: e3fd1243830fec84c96202b121a46672
+    path: Assets/Scenes/DigitalPrototypeSpilTest.unity
+    guid: 32b92429bf15ed14f82e80b90c44b937
   m_configObjects: {}
