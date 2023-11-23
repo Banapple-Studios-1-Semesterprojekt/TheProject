@@ -375,7 +375,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.036049023, y: 0}
+  m_Offset: {x: 0.07121578, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -386,7 +386,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.92790186, y: 1}
+  m_Size: {x: 0.8575683, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &163317860
 SpriteRenderer:
@@ -1723,11 +1723,77 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPuddle 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6368814981308297374, guid: ef7a8d2947fc0a04cac24f2fd7f1dec7, type: 3}
+      propertyPath: splashParticles
+      value: 
+      objectReference: {fileID: 1327677800}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef7a8d2947fc0a04cac24f2fd7f1dec7, type: 3}
+--- !u!1001 &1327677799
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1798681498482003032, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_Name
+      value: Water Splash (Particles)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891376209801617184, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+--- !u!198 &1327677800 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5535069844142253564, guid: 1087bbf50d53a734ea40050491e1aad9, type: 3}
+  m_PrefabInstance: {fileID: 1327677799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1437037124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2440,6 +2506,7 @@ SceneRoots:
   - {fileID: 2143754333}
   - {fileID: 328763951}
   - {fileID: 1229343503}
+  - {fileID: 1327677799}
   - {fileID: 968960317252253162}
   - {fileID: 102369781}
   - {fileID: 1015338327}
