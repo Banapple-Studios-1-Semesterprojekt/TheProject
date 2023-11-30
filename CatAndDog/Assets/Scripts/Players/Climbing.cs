@@ -93,4 +93,13 @@ public class Climbing : MonoBehaviour
         rb.drag = 0;
         startClimb = true;
     }
+    public void stopclimp()
+    {
+        moveCat.enabled = true;
+        moveCat.jumpPower = moveCat.Cat_jumpMinPower;
+        rb.gravityScale = gravity;
+        rb.drag = 0;
+        startClimb = true;
+
+    }
 }
