@@ -17,7 +17,6 @@ public class DataManager : MonoBehaviour
     [SerializeField] private GroundParticlesProperties grassColors = new GroundParticlesProperties(Color.green, Color.green - new Color(_COLORADD, _COLORADD, _COLORADD));
     [SerializeField] private GroundParticlesProperties waterColors = new GroundParticlesProperties(Color.blue, Color.blue + new Color(_COLORADD, _COLORADD, _COLORADD));
     [SerializeField] private GroundParticlesProperties roadColors = new GroundParticlesProperties(Color.black, Color.black + new Color(_COLORADD, _COLORADD, _COLORADD));
-
     public GroundParticlesProperties GetColors(GroundType type)
     {
         switch(type)
@@ -32,4 +31,6 @@ public class DataManager : MonoBehaviour
                 return null;
         }
     }
+
+    public AudioClip jumpClip, barkClip;
 }

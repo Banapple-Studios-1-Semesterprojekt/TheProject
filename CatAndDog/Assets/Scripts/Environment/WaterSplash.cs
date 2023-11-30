@@ -10,9 +10,12 @@ public class WaterSplash : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.GetComponent<Rigidbody2D>().velocity.x>4|| collision.GetComponent<Rigidbody2D>().velocity.x < -4|| PopulationControler <= 1) 
+        if(collision.GetComponent<Rigidbody2D>())
         {
-            SpawnParticles(collision.transform.position);
+            if (collision.GetComponent<Rigidbody2D>().velocity.x > 4 || collision.GetComponent<Rigidbody2D>().velocity.x < -4 || PopulationControler <= 1)
+            {
+                SpawnParticles(collision.transform.position);
+            }
         }
     }
 

@@ -8,9 +8,8 @@ public class Bark : MonoBehaviour
     public bool canBark = false;
     public bool barkReset = false;
 
-    private void Start()
-    {
-    }
+    public delegate void BarkAction();
+    public event BarkAction onBark;
 
     // Update is called once per frame
     private void Update()
@@ -18,10 +17,12 @@ public class Bark : MonoBehaviour
         // ved input doBark set colider til aktiv, invoke reset bark om et sekund og afspild lyd
         if (canBark && Input.GetKeyDown(doBark) && barkReset == false)
         {
+            //event call
+            onBark?.Invoke();
+
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
             barkReset = true;
             Invoke("ResetBark", 1);
-            gameObject.GetComponent<AudioSource>().Play();
         }
     }
 

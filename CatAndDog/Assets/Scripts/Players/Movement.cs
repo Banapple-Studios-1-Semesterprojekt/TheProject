@@ -31,14 +31,13 @@ public class Movement : MonoBehaviour
     private BoxCollider2D boxCol;
     private SpriteRenderer visualSprite;
 
-    
+    //events
+    public delegate void CatJumpAction();
+    public event CatJumpAction onPlayerJump;
 
-    public static Movement instance;
     // Start is called before the first frame update
     private void Awake()
     {
-        instance = this;
-
         //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
         visualSprite = GetComponent<SpriteRenderer>();
@@ -144,6 +143,9 @@ public class Movement : MonoBehaviour
                 rb.AddForce(new Vector2(jumpPower * jumpPowerX * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
                 jump = false;
                 jumpPower = Cat_jumpMinPower;
+
+                //event call
+                onPlayerJump?.Invoke();
             }
         }
         else
@@ -166,6 +168,9 @@ public class Movement : MonoBehaviour
             {
                 rb.AddForce(new Vector2(jumpPower * jumpPowerX * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
                 jump = false;
+
+                //event call
+                onPlayerJump?.Invoke();
             }
 
         }
