@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4925f787bfa4d8749bdf643d706bea15
+guid: 482e1d20cfc3b79429f7ee1d2cc4879e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CatCrouchAnimation_0
+      name: CatCrouchWalk_0
       rect:
         serializedVersion: 2
         x: 4
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9fd3843097e3204bb1b9544e7a1298e
-      internalID: -1070438509
+      spriteID: 6013122c8a673bd4e952557d69c1aa63
+      internalID: -502637594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatCrouchAnimation_1
+      name: CatCrouchWalk_1
       rect:
         serializedVersion: 2
         x: 44
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55a25ea3c31650e4bbbc43a251deb6fe
-      internalID: -812173153
+      spriteID: 9f419ea63b9d83b41bb42be2fb46b6e8
+      internalID: -1906598820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatCrouchAnimation_2
+      name: CatCrouchWalk_2
       rect:
         serializedVersion: 2
         x: 84
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb8548e03650b44d9924e1d49cb9582
-      internalID: 1762467831
+      spriteID: 61c980d491cd870458cb03e4ee1e1d96
+      internalID: 870193192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatCrouchAnimation_3
+      name: CatCrouchWalk_3
       rect:
         serializedVersion: 2
         x: 125
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f9c5467ff558414ab42563be3afbaf5
-      internalID: 1640514936
+      spriteID: ac9729497c9d2a74f925cd7e9d4ef0ed
+      internalID: -201165921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatCrouchAnimation_4
+      name: CatCrouchWalk_4
       rect:
         serializedVersion: 2
         x: 165
@@ -208,8 +208,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b84c77ae475f52468736efca05e532a
-      internalID: -1975258454
+      spriteID: 698ae99d43dfd964190fb7afba6be16c
+      internalID: -580699716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouchWalk_5
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 8
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca26ab787b07c84c9ea23831875de1d
+      internalID: -1367470079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouchWalk_6
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 8
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa6f431311d8c84e962417d87d0a53a
+      internalID: -1371817689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouchWalk_7
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 8
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cd4cd775c9b5f4e9e5d7c2e327eeb6
+      internalID: 1215567129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouchWalk_8
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 8
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b659a27fa6eda48b13021189d638e9
+      internalID: -2138734091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouchWalk_9
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 8
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f800b548b151a4ab16056bb7b79514
+      internalID: -2119751156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouchWalk_10
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 8
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e882c8d8c8082408dbd781ffc6d52c
+      internalID: 346039711
       vertices: []
       indices: 
       edges: []
@@ -225,11 +351,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CatCrouchAnimation_0: -1070438509
-      CatCrouchAnimation_1: -812173153
-      CatCrouchAnimation_2: 1762467831
-      CatCrouchAnimation_3: 1640514936
-      CatCrouchAnimation_4: -1975258454
+      CatCrouchWalk_0: -502637594
+      CatCrouchWalk_1: -1906598820
+      CatCrouchWalk_10: 346039711
+      CatCrouchWalk_2: 870193192
+      CatCrouchWalk_3: -201165921
+      CatCrouchWalk_4: -580699716
+      CatCrouchWalk_5: -1367470079
+      CatCrouchWalk_6: -1371817689
+      CatCrouchWalk_7: 1215567129
+      CatCrouchWalk_8: -2138734091
+      CatCrouchWalk_9: -2119751156
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

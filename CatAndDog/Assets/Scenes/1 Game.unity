@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6f506c64d1222448c4dd15846081a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraStartSize: 3.6
+  desiredScale: 2.4
 --- !u!1001 &2070274328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1515,6 +1515,10 @@ PrefabInstance:
     - target: {fileID: 2536569404659080172, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
       propertyPath: m_Name
       value: Cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292686905359954716, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6737882315644096492, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1556,6 +1560,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9039960796492567580, guid: 212a9e5017ed075418aecbe27b6b45f5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ca0fc02e1a73dcc4d9cac3664a3ed401, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
