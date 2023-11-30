@@ -74,7 +74,7 @@ public class Animation_Cat : MonoBehaviour
             animator.SetBool("Inair", true);
         }
 
-        //Movement leaft right Animation   
+        //Movement left/right Animation   
         if (Input.GetKey(movement.left) && movement.IsGrounded() || Input.GetKey(movement.right) && movement.IsGrounded())
         {
             animator.SetBool("Run", true);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ad0b9c34766e28b4aab7b13d1f74fbbf
+guid: eef63f0a86bd21c4f8a5a9cca710e8cf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2nd fence_0
+      name: CatCrouch_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 24
-        width: 4
-        height: 21
+        x: 4
+        y: 6
+        width: 32
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f12c01c55622a92418fa2b7546b00d4a
-      internalID: 431630999
+      spriteID: 93c780dc0006d56469da4e7cdd6bef20
+      internalID: -626960234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2nd fence_1
+      name: CatCrouch_1
       rect:
         serializedVersion: 2
-        x: 72
-        y: 24
-        width: 26
-        height: 26
+        x: 44
+        y: 7
+        width: 32
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bced36b1c119eb743bd71a3cadeaa1ff
-      internalID: -1215561874
+      spriteID: 65d2db51f2aea5540ab7fd37cbeb61ee
+      internalID: 47756741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouch_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 8
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74063e1dbed33947bb0c9349483effd
+      internalID: -1133082624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouch_3
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 8
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2a3ade9c7ba394c94ccdc27eecdc95
+      internalID: -1122449774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCrouch_4
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 8
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03215a1c61ecda9499246602ccfcdb42
+      internalID: -639972857
       vertices: []
       indices: 
       edges: []
@@ -162,8 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      2nd fence_0: 431630999
-      2nd fence_1: -1215561874
+      CatCrouch_0: -626960234
+      CatCrouch_1: 47756741
+      CatCrouch_2: -1133082624
+      CatCrouch_3: -1122449774
+      CatCrouch_4: -639972857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
