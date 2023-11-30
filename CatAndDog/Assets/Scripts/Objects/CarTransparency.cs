@@ -9,6 +9,7 @@ public class CarTransparency : MonoBehaviour {
     public bool isCharacterInside = false; // Flag to track if the character is inside the car.
     public bool catInCar = false;
     public bool dogInCar = false;
+    public float transparenty = 0.1f; // Set transparency to 1%.
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Cat") || other.CompareTag("Dog")) {
@@ -19,9 +20,12 @@ public class CarTransparency : MonoBehaviour {
                 dogInCar = true;
             }
             isCharacterInside = true;
+
+            //frontSpriteRenderer.enabled = false;
+
             // Adjust the transparency of the front of the car.
             Color frontColor = frontSpriteRenderer.color;
-            frontColor.a = 0.01f; // Set transparency to 1%.
+            frontColor.a = transparenty;
             frontSpriteRenderer.color = frontColor;
         }
     }
@@ -35,6 +39,9 @@ public class CarTransparency : MonoBehaviour {
         }
         if (!catInCar && !dogInCar) {
             isCharacterInside = false;
+
+            //frontSpriteRenderer.enabled = true;
+
             // Restore the transparency of the car's front.
             Color frontColor = frontSpriteRenderer.color;
             frontColor.a = 1.0f; // Set transparency to 100%.
