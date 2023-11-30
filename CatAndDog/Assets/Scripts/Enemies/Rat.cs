@@ -105,7 +105,7 @@ private void FixedUpdate()
         else if (collision.CompareTag("Cat") || collision.CompareTag("Dog"))
         {
             //hvis rotten rammer katten eller hunden reset level 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            collision.GetComponent<Death>().Die();
         }
     }
 

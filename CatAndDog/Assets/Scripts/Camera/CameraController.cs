@@ -32,5 +32,11 @@ public class CameraController : MonoBehaviour
             cameraa.orthographicSize = Mathf.Lerp(cameraa.orthographicSize, desiredSize, smoothTime * Time.deltaTime);
             camUp = (Mathf.Abs(Players[0].position.x - Players[1].position.x) - distanceBeforeZoom) * .28f + startZoom - height;
         }
+        else
+        {
+            float desiredSize = ((Mathf.Abs(Players[0].position.x - Players[1].position.x) - distanceBeforeZoom) * .28f + startZoom);
+            cameraa.orthographicSize = startZoom;
+            camUp = startZoom - height;
+        }
     }
 }
