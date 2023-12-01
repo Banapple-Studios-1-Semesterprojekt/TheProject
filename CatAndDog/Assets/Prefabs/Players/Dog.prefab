@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeefedf1d6d0b1b46b0c2bfbaf4cc11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 7124462739628976456}
 --- !u!1 &4806998970286060236
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +593,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 18ff85dde3815ab4bb4d4e4c3e230d8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -705,8 +704,8 @@ MonoBehaviour:
   Cat_jumpMaxPower: 1
   Cat_jumpMinPower: 1
   Cat_jumpBuildUpSpeed: 1
-  jumpPowerX: 0.4
-  jumpPowerY: 0.6
+  jumpPowerX: 0.6
+  jumpPowerY: 0.7
 --- !u!95 &5001251291859992483
 Animator:
   serializedVersion: 5

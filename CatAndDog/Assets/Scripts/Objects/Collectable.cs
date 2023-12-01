@@ -15,6 +15,7 @@ public class Collectable : MonoBehaviour
     public int unlock = 1;
     public Sprite tuna;
     public Sprite bone;
+    public Sprite unlockSprite;
 
     private UIController controller;
     private AudioSource pickUpCollectible;
@@ -32,6 +33,10 @@ public class Collectable : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = tuna;
         }
+        else if (cType == CollectableType.Unlock)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = unlockSprite;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -41,14 +46,15 @@ public class Collectable : MonoBehaviour
             pickUpCollectible.Play();
         }
         // ved triggerenter chek type og for�g tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
-        controller = GameObject.Find("Canvas").GetComponent<UIController>();
+        controller = GameObject.Find("GameCanvas").GetComponent<UIController>();
         switch (cType)
         {
             case CollectableType.Bone:
                 if (other.CompareTag("Dog"))
                 {
+                    Debug.Log("Bone for dog");
                     controller.dogFood++;
-                    controller.scoretimerdog = 5;
+                    controller.ShowFoodScoreUI();
                     controller.Updatescore();
                     Destroy(gameObject);
                 }
@@ -58,7 +64,8 @@ public class Collectable : MonoBehaviour
             case CollectableType.Tuna:
                 if (other.CompareTag("Cat"))
                 {
-                    controller.scoretimercat = 5;
+                    Debug.Log("Tuna");
+                    controller.ShowFoodScoreUI();
                     controller.catFood++;
                     controller.Updatescore();
                     Destroy(gameObject);
@@ -69,8 +76,7 @@ public class Collectable : MonoBehaviour
             case CollectableType.Both:
                 if (other.CompareTag("Dog") || other.CompareTag("Cat"))
                 {
-                    controller.scoretimercat = 5;
-                    controller.scoretimerdog = 5;
+                    controller.ShowFoodScoreUI();
                     controller.catFood++;
                     controller.dogFood++;
                     controller.Updatescore();

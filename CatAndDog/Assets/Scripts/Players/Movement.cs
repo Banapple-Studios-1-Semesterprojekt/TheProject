@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     public float Cat_jumpBuildUpSpeed = 1f;
     public float jumpPowerX = 0.2f;
     public float jumpPowerY = 0.8f;
+    private bool isJumping = false;
     private Vector2 boxColliderSize;
 
     private float colliderSize = 1;
@@ -89,6 +90,7 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetKeyUp(up) && IsGrounded() && delayJumpCoroutine == null)
             {
+
                 delayJumpCoroutine = StartCoroutine(DelayJump());
             }
         }
@@ -106,8 +108,10 @@ public class Movement : MonoBehaviour
     IEnumerator DelayJump()
     {
         jump = true;
+        isJumping = true;
         yield return new WaitForSeconds(1f);
         delayJumpCoroutine = null;
+        isJumping = false;
     }
 
     //check if grounded
@@ -151,13 +155,13 @@ public class Movement : MonoBehaviour
         else
         {
             //movment left right hund
-            if (Input.GetKey(left) && IsGrounded())
+            if (Input.GetKey(left) && IsGrounded() && !isJumping)
             {
                 rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
                 direction = -1;
             }
 
-            if (Input.GetKey(right) && IsGrounded())
+            if (Input.GetKey(right) && IsGrounded() && !isJumping)
             {
                 rb.velocity = new Vector3(speed, rb.velocity.y, 0);
                 direction = 1;
