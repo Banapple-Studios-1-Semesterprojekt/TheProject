@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -8,21 +9,36 @@ public class CameraController : MonoBehaviour
     public float height = 5;
 
     public float smoothTime = 10f;
+    public float spotSmoothTime = 3f;
 
     private Camera cameraa;
     private float camUp = 0;
 
-    // Start is called before the first frame update
+    private bool isOnSpot = false;
+
+    public static CameraController instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
-        cameraa = gameObject.GetComponent<Camera>();
+        cameraa = GetComponent<Camera>();
         cameraa.orthographicSize = startZoom;
         camUp = startZoom - height;
     }
 
-    // Update is called once per frame
     private void Update()
     {
+        UpdateCameraMovement();
+    }
+
+    private void UpdateCameraMovement()
+    {
+        if(isOnSpot) { return; }
+
         Vector3 desiredPos = new Vector3((Players[0].position.x + Players[1].position.x) / 2, camUp, -10);
         transform.position = Vector3.Lerp(transform.position, desiredPos, smoothTime * Time.deltaTime);
 
@@ -38,5 +54,33 @@ public class CameraController : MonoBehaviour
             cameraa.orthographicSize = startZoom;
             camUp = startZoom - height;
         }
+    }
+
+    public void SetCameraToSpot(Transform spot, float targetZoom)
+    {
+        isOnSpot = true;
+        StopAllCoroutines();
+        StartCoroutine(SetCameraToSpotSmoothly(spot, targetZoom));
+    }
+
+    public void RemoveCameraFromSpot()
+    {
+        StopAllCoroutines();
+        isOnSpot = false;
+    }
+
+    IEnumerator SetCameraToSpotSmoothly(Transform spot, float targetZoom)
+    {
+        Vector3 correctPos = new Vector3(spot.position.x, spot.position.y, transform.position.z);
+
+        while(Vector3.Distance(transform.position, correctPos) > 0.01f && Mathf.Abs(cameraa.orthographicSize - targetZoom) > 0.01f)
+        {
+            transform.position = Vector3.Lerp(transform.position, correctPos, spotSmoothTime * Time.deltaTime);
+            cameraa.orthographicSize = Mathf.Lerp(cameraa.orthographicSize, targetZoom, spotSmoothTime * Time.deltaTime);
+            yield return null;
+        }
+
+        transform.position = correctPos;
+        cameraa.orthographicSize = targetZoom;
     }
 }

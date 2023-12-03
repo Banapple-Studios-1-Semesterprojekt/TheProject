@@ -32,5 +32,6 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public AudioClip jumpClip, barkClip;
+    public AudioClip jumpClip, barkClip, collectClip, waterSplash, fenceClip, landingClip, winClip, carDoorClip, branchClip;
+    public AudioClip[] meowClips;
 }

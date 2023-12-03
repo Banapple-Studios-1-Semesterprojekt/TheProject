@@ -40,19 +40,21 @@ public class Rat : MonoBehaviour
         // corutine der skifter mellem at rotten går frem og tilbage og skifte retning tilsvarene
         while (isScared==false)
         {
+            float randomTime = Random.Range(walkdis / 1.3f, walkdis * 1.1f);
+
             rb.velocity = new Vector2(walkspeed, 0);
             if (!isScared)
             {
                  transform.eulerAngles = new Vector2(0,0);
             }
            
-            yield return new WaitForSeconds(walkdis);
+            yield return new WaitForSeconds(randomTime);
             rb.velocity = new Vector2(-walkspeed, 0);
             if (!isScared)
             {
                 transform.eulerAngles = new Vector2(0, 180);
             }
-            yield return new WaitForSeconds(walkdis);
+            yield return new WaitForSeconds(randomTime);
         }
     }
 

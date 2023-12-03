@@ -11,6 +11,8 @@ public class FenceSwitch : MonoBehaviour
         if (collision.CompareTag("Dog"))
         {
             animator.SetBool("isFenceOpen", true);
+            GeneralSoundEffect.instance.PlaySoundEffectWithRandomPitch(DataManager.instance.fenceClip, 1f);
+            enabled = false;
         }       
     }
 }

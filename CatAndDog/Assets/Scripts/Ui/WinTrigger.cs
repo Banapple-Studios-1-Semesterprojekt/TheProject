@@ -81,7 +81,7 @@ public class WinTrigger : MonoBehaviour
                 uiControler.stoptimer();
                 Invoke("setWinScreen", 2);
                 stopmoving = true;
-               
+                GeneralSoundEffect.instance.SetBackgroundMusic(DataManager.instance.winClip, 0.8f, false);
             }
         }
     }
@@ -143,7 +143,7 @@ public class WinTrigger : MonoBehaviour
         else{min = "0" + t_M.ToString();}
         
         //Set time Display text to min : sec
-        TimeDisplay.text = min+":"+sec;
+        TimeDisplay.text = "time: " + min + ":" + sec;
 
         //do the same prosses as above for target time 
         t_S = TagetTime;
@@ -164,7 +164,7 @@ public class WinTrigger : MonoBehaviour
         }
         else { min = "0" + t_M.ToString(); }
 
-        TagetTimeDisplay.text = min + ":" + sec;
+        TagetTimeDisplay.text = "target: " + min + ":" + sec;
 
         // set defult Image for star vone and catfood   
         for (int i = 0; i < 2; i++)

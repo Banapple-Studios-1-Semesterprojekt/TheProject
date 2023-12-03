@@ -11,8 +11,7 @@ public class Bark : MonoBehaviour
     public delegate void BarkAction();
     public event BarkAction onBark;
 
-    // Update is called once per frame
-    private void Update()
+    private void LateUpdate()
     {
         // ved input doBark set colider til aktiv, invoke reset bark om et sekund og afspild lyd
         if (canBark && Input.GetKeyDown(doBark) && barkReset == false)
@@ -22,6 +21,7 @@ public class Bark : MonoBehaviour
 
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
             barkReset = true;
+
             Invoke("ResetBark", 1);
         }
     }
@@ -30,6 +30,7 @@ public class Bark : MonoBehaviour
     {
         //set colider til indaktiv
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
         barkReset = false;
     }
 }

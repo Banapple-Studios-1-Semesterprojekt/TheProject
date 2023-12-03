@@ -18,12 +18,12 @@ public class Collectable : MonoBehaviour
     public Sprite unlockSprite;
 
     private UIController controller;
-    private AudioSource pickUpCollectible;
 
     // Start is called before the first frame update
     private void Start()
     {
-        pickUpCollectible = GetComponent<AudioSource>();
+        controller = GameObject.Find("GameCanvas").GetComponent<UIController>();
+
         // set collectable image
         if (cType == CollectableType.Bone)
         {
@@ -43,10 +43,9 @@ public class Collectable : MonoBehaviour
     {
         if (other.CompareTag("Dog") || other.CompareTag("Cat"))
         {
-            pickUpCollectible.Play();
+            GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f);
         }
         // ved triggerenter chek type og for�g tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
-        controller = GameObject.Find("GameCanvas").GetComponent<UIController>();
         switch (cType)
         {
             case CollectableType.Bone:

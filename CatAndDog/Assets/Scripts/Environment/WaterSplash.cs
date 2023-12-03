@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WaterSplash : MonoBehaviour
@@ -12,7 +11,7 @@ public class WaterSplash : MonoBehaviour
     {
         if(collision.GetComponent<Rigidbody2D>())
         {
-            if (collision.GetComponent<Rigidbody2D>().velocity.x > 4 || collision.GetComponent<Rigidbody2D>().velocity.x < -4 || PopulationControler <= 1)
+            if (collision.GetComponent<Rigidbody2D>().velocity.x > 2 || collision.GetComponent<Rigidbody2D>().velocity.x < -2 || PopulationControler <= 1)
             {
                 SpawnParticles(collision.transform.position);
             }
@@ -24,6 +23,11 @@ public class WaterSplash : MonoBehaviour
         if(collision.CompareTag("Cat"))
         {
             SpawnParticles(collision.transform.position);
+        }
+
+        if(collision.CompareTag("Cat") || collision.CompareTag("Dog"))
+        {
+            GeneralSoundEffect.instance.PlaySoundEffectWithRandomPitch(DataManager.instance.waterSplash, 1f);
         }
     }
 

@@ -6,12 +6,14 @@ public class AnimationDog : MonoBehaviour
 {
     private Movement movement;
     private Animator animator;
+    private Bark bark;
 
 
     void Start()
     {
         movement = GetComponent<Movement>();
         animator = GetComponent<Animator>();
+        bark = GetComponentInChildren<Bark>();
     }
 
     // Update is called once per frame
@@ -47,5 +49,10 @@ public class AnimationDog : MonoBehaviour
             animator.SetBool("InAir", false);
         }
 
+        //Bark
+        if(Input.GetKeyDown(KeyCode.RightShift) && bark.canBark && !bark.barkReset)
+        {
+            animator.SetTrigger("Bark");
+        }
     }
 }

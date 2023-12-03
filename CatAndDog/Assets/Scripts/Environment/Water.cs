@@ -16,6 +16,8 @@ public class Water : MonoBehaviour
             {
                 cat = other.GetComponent<SpriteRenderer>();
             }
+
+            other.GetComponentInChildren<AudioSource>().PlayOneShot(DataManager.instance.meowClips[Random.Range(0, 2)], 0.9f);
             StartCoroutine(PushCatBack(other.GetComponent<Movement>()));
         }
     }

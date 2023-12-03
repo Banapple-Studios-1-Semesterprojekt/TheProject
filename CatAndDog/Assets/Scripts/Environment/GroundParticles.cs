@@ -18,6 +18,7 @@ public class GroundParticles : MonoBehaviour
         if(collision.transform.CompareTag("Cat") || collision.transform.CompareTag("Dog"))
         {
             SpawnGroundParticles(collision.transform);
+            collision.transform.GetComponentInChildren<AudioSource>().PlayOneShot(DataManager.instance.landingClip);
         }
     }
 
