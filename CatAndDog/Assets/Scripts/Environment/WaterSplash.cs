@@ -5,7 +5,6 @@ public class WaterSplash : MonoBehaviour
     //makes sure ther only is a certain amount of particels at any given time
     private int PopulationControler=0;
     [SerializeField] private ParticleSystem splashParticles;
-    [SerializeField] private bool onlyForPlayers = false;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
