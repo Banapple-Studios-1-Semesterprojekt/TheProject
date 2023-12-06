@@ -41,21 +41,22 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Dog") || other.CompareTag("Cat"))
-        {
-            GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f);
-        }
         // ved triggerenter chek type og for�g tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
         switch (cType)
         {
             case CollectableType.Bone:
                 if (other.CompareTag("Dog"))
                 {
+                    GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f); 
+                    gameObject.GetComponent<ParticleSystem>().Play();
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                    Destroy(gameObject,.5f);
                     Debug.Log("Bone for dog");
                     controller.dogFood++;
                     controller.ShowFoodScoreUI();
                     controller.Updatescore();
-                    Destroy(gameObject);
+                    
                 }
 
                 break;
@@ -67,7 +68,11 @@ public class Collectable : MonoBehaviour
                     controller.ShowFoodScoreUI();
                     controller.catFood++;
                     controller.Updatescore();
-                    Destroy(gameObject);
+                    GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f);
+                    gameObject.GetComponent<ParticleSystem>().Play();
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                    Destroy(gameObject, .5f);
                 }
 
                 break;
@@ -80,6 +85,11 @@ public class Collectable : MonoBehaviour
                     controller.dogFood++;
                     controller.Updatescore();
                     Destroy(gameObject);
+                    GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f);
+                    gameObject.GetComponent<ParticleSystem>().Play();
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                    Destroy(gameObject, .5f);
                 }
                 break;
 
