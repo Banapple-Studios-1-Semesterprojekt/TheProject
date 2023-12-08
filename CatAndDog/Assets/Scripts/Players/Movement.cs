@@ -170,11 +170,24 @@ public class Movement : MonoBehaviour
             // Move up hund
             if (jump == true)
             {
+                if(Input.GetKey(left)|| Input.GetKey(right))
+                {
                 rb.AddForce(new Vector2(jumpPower * jumpPowerX * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
                 jump = false;
 
                 //event call
                 onPlayerJump?.Invoke();
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(jumpPower * .05f * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
+                    jump = false;
+
+                    //event call
+                    onPlayerJump?.Invoke();
+
+                }
+
             }
 
         }

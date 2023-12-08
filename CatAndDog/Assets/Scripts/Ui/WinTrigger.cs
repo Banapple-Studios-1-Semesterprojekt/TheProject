@@ -117,7 +117,9 @@ public class WinTrigger : MonoBehaviour
 
         //Make some time convertion variabels and set t_S(time in secorns) to uicontrolers timer
         int t_S= uiControler.Timer;
+        int t_S2;
         int t_M=0;
+        int t_M2 = 0;
         //make disblay strings
         string sec = "00";
         string min = "00";
@@ -146,23 +148,23 @@ public class WinTrigger : MonoBehaviour
         TimeDisplay.text = "time: " + min + ":" + sec;
 
         //do the same prosses as above for target time 
-        t_S = TagetTime;
-        while (t_S > 59)
+        t_S2 = TagetTime;
+        while (t_S2 > 59)
         {
-            t_S -= 60;
-            t_M++;
+            t_S2 -= 60;
+            t_M2++;
         }
-        if (t_S > 9)
+        if (t_S2 > 9)
         {
-            sec = t_S.ToString();
+            sec = t_S2.ToString();
         }
-        else { sec = "0" + t_S.ToString(); }
+        else { sec = "0" + t_S2.ToString(); }
 
-        if (t_M > 10)
+        if (t_M2 > 10)
         {
-            min = t_M.ToString();
+            min = t_M2.ToString();
         }
-        else { min = "0" + t_M.ToString(); }
+        else { min = "0" + t_M2.ToString(); }
 
         TagetTimeDisplay.text = "target: " + min + ":" + sec;
 
