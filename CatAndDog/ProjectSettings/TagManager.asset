@@ -10,6 +10,7 @@ TagManager:
   - Car
   - Water
   - Climbable
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Dog
   - Car
   - PressurePlates
-  - 
+  - Rat
   - 
   - 
   - 

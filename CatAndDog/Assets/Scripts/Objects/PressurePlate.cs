@@ -6,41 +6,17 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     private ManagerPressurePlates manager;
-    public OpenFence openFence;
+    private Animator animator;
 
-    //public bool isFenceOpen;
-    //public bool isFenceClosed;
-    
-
-    float plateY; //Moves plate on the y-axis, so it moves into the ground when pressed. 
-    Vector3 plateUpPosition; //Position of plate when the plate is NOT pressed. 
-    Vector3 plateDownPosition; //Position of plate when plate is pressed.
-    float plateSpeed = 1f; //Speed of the movement of the plate.
     float plateDelay = 0.2f; //When can the plate be pressed again. --> Ensures the plate does not continually go up and down.
     public bool onPlate = false;
     public bool dogsPlate = false;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+
         manager = FindAnyObjectByType<ManagerPressurePlates>(); //Finds the script "ManagerPressurePlates".
-
-        plateY = transform.localScale.y / 2; //Divides the local scale of the pressure plate by 2. --> How much it will lower.
-
-        plateUpPosition = transform.position; //The current position of the plate.
-        plateDownPosition = new Vector3(transform.position.x, transform.position.y - plateY, transform.position.z);
-        //Sets the new transform of the pressure plate. Subtracts "plateY". 
-    }
-
-    private void Update()
-    {
-        if (onPlate)
-        {
-            PlateUp();
-        }
-        else if (!onPlate)
-        {
-            PlateDown();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,32 +24,45 @@ public class PressurePlate : MonoBehaviour
       if (collision.CompareTag("Dog") && dogsPlate)
         {
             onPlate = !onPlate; //Sets "onPlate" to true.
-            PlateDown();
             manager.playersOnPlate++;
             manager.NumberOfPlayers();
+            animator.SetBool("PlayerOnPlate", true);
             Debug.Log("One player is on plate");
         }
      if(collision.CompareTag("Cat") && !dogsPlate)
         {
             onPlate = !onPlate; //Sets "onPlate" to true.
-            PlateDown();
             manager.playersOnPlate++;
             manager.NumberOfPlayers();
-            Debug.Log("One player is on plate");
+            animator.SetBool("PlayerOnPlate", true);
+            Debug.Log("One player is on other plate");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Cat") || collision.CompareTag("Dog"))
+        if (collision.CompareTag("Cat") && !dogsPlate)
         {
             onPlate = false;
-            PlateUp();
             if(manager.playersOnPlate <= 0)
             {
                 return; 
             }
             manager.playersOnPlate--;
+            animator.SetBool("PlayerOnPlate", false);
+            StartCoroutine(PlateUpDelay(plateDelay));
+
+            Debug.Log("Went off plate");
+        }
+        else if(collision.CompareTag("Dog") && dogsPlate)
+        {
+            onPlate = false;
+            if (manager.playersOnPlate <= 0)
+            {
+                return;
+            }
+            manager.playersOnPlate--;
+            animator.SetBool("PlayerOnPlate", false);
             StartCoroutine(PlateUpDelay(plateDelay));
 
             Debug.Log("Went off plate");
@@ -86,24 +75,6 @@ public class PressurePlate : MonoBehaviour
         yield return new WaitForSeconds(timer);
         onPlate = false;
     }
-
-    void PlateUp()
-    {
-        if (transform.position != plateUpPosition)
-        {
-            transform.position = transform.position = Vector3.MoveTowards(transform.position, plateUpPosition, plateSpeed * Time.deltaTime);
-        }
-        
-    }
-
-   void PlateDown()
-    {
-        if (transform.position == plateUpPosition)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, plateDownPosition, plateSpeed * Time.deltaTime);
-        }
-    } 
-
 
 
 }

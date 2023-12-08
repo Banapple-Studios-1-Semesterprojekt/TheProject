@@ -17,29 +17,26 @@ public class Animation_Cat : MonoBehaviour
     void Update()
     {
         // climb Animation
-        if (climbing.climb)
+        if (!climbing.startClimb)
         {
             animator.SetBool("Climb", true);
             if (Input.GetKey(movement.Cat_down))
             {
-                animator.SetBool("Climb_down", true);
-                animator.SetBool("Climb_up", false);
-            }else if (Input.GetKey(movement.up))
+                animator.SetBool("Climb_move", true);
+            }
+            else if (Input.GetKey(movement.up))
             {
-                animator.SetBool("Climb_down", false);
-                animator.SetBool("Climb_up", true);
+                animator.SetBool("Climb_move", true);
             }
             else
             {
-                animator.SetBool("Climb_down", false);
-                animator.SetBool("Climb_up", false);
+                animator.SetBool("Climb_move", false);
             }
         }
         else
         {
             animator.SetBool("Climb", false);
-            animator.SetBool("Climb_down", false);
-            animator.SetBool("Climb_up", false);
+            animator.SetBool("Climb_move", false);
         }
        
         //duck Animation
@@ -74,7 +71,7 @@ public class Animation_Cat : MonoBehaviour
             animator.SetBool("Inair", true);
         }
 
-        //Movement leaft right Animation   
+        //Movement left/right Animation   
         if (Input.GetKey(movement.left) && movement.IsGrounded() || Input.GetKey(movement.right) && movement.IsGrounded())
         {
             animator.SetBool("Run", true);

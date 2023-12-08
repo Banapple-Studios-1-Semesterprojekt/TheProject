@@ -9,6 +9,7 @@ public class TreeBehaviour : MonoBehaviour
         if(collision.CompareTag("Cat"))
         {
             treeAnimator.SetBool("catON", true);
+            GeneralSoundEffect.instance.PlaySoundEffectWithRandomPitch(DataManager.instance.branchClip, 1f);
         }
     }
 

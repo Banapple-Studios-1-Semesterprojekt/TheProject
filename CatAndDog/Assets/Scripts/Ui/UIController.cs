@@ -34,47 +34,64 @@ public class UIController : MonoBehaviour
     [SerializeField] string[] Unlocke_text;
     private Bark bark;
 
+    private RectTransform dogScoreRect;
+    [SerializeField] private Animator foodScoreAni;
+
     private void Start()
     {
         //find Bark and start timer
         bark = FindAnyObjectByType<Bark>();
         StartCoroutine(timer());
+
+        dogScoreRect = DogFoodScore.GetComponent<RectTransform>();
     }
 
     private void Update()
     {
+        /*
         //if the svoretimer is bigger than one move ther svore text into view and decreas scoretime, else make sure the score text is out of frame
         if (scoretimercat >= 0)
         {
-            if (CatFoodScore.transform.position.x > 1850)
+            if (CatFoodScore.transform.localPosition.x > 1190)
             {
-            CatFoodScore.transform.position = new Vector2(-10+CatFoodScore.transform.position.x, CatFoodScore.transform.position.y);
+            CatFoodScore.transform.localPosition = new Vector2(-10+CatFoodScore.transform.localPosition.x, CatFoodScore.transform.localPosition.y);
             }
             scoretimercat -=1*Time.deltaTime;
         }
         else
         {
-            if (CatFoodScore.transform.position.x < 2150)
+            if (CatFoodScore.transform.localPosition.x < 860)
             {
-             CatFoodScore.transform.position = new Vector2(10 + CatFoodScore.transform.position.x, CatFoodScore.transform.position.y);
+             CatFoodScore.transform.localPosition = new Vector2(10 + CatFoodScore.transform.localPosition.x, CatFoodScore.transform.localPosition.y);
             }
         }
 
         if (scoretimerdog >= 0)
         {
-            if (DogFoodScore.transform.position.x > 1850)
+            if (dogScoreRect.anchoredPosition.x <= 860)
             {
-                DogFoodScore.transform.position = new Vector2(-10 + DogFoodScore.transform.position.x, DogFoodScore.transform.position.y);
+                dogScoreRect.anchoredPosition = new Vector2(10 + dogScoreRect.anchoredPosition.x, DogFoodScore.transform.position.y);
+                Debug.Log("Move your ass!");
             }
-            scoretimerdog -= 1 * Time.deltaTime;
         }
         else
         {
-            if (DogFoodScore.transform.position.x < 2150)
+            if (dogScoreRect.anchoredPosition.x > 1190)
             {
-                DogFoodScore.transform.position = new Vector2(10 + DogFoodScore.transform.position.x, DogFoodScore.transform.position.y);
+                dogScoreRect.anchoredPosition = new Vector2(-10 + dogScoreRect.anchoredPosition.x, DogFoodScore.transform.localPosition.y);
+                Debug.Log("Move your ass back!");
             }
+            
+            scoretimerdog -= 1 * Time.deltaTime;
         }
+
+        Debug.Log(dogScoreRect.anchoredPosition.x);
+        */
+    }
+
+    public void ShowFoodScoreUI()
+    {
+        foodScoreAni.SetTrigger("Unlock");
     }
     public void stoptimer()
     {
@@ -148,14 +165,11 @@ public class UIController : MonoBehaviour
     IEnumerator ULScrenn()
     {
         // unlock scenn anymation controle
-        bool active = true;
-        while (active)
-        {
-            UnlockerScren.SetActive(true);
-            yield return new WaitForSeconds(4);
-            UnlockerScren.SetActive(false);
-            active = false;
-            StopCoroutine(ULScrenn());
-        }
+        UnlockerScren.SetActive(true);
+
+        yield return new WaitForSeconds(5);
+
+        UnlockerScren.SetActive(false);
+        StopCoroutine(ULScrenn());
     }
 }

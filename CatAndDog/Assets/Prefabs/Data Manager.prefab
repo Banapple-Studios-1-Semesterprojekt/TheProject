@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1420807876512076489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7151929295841499343}
+  - component: {fileID: 9153484332114027187}
+  m_Layer: 0
+  m_Name: Data Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7151929295841499343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420807876512076489}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9153484332114027187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420807876512076489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 189e3f67f296b3548ad1a24a62df851d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundParticles: {fileID: 2735774624976788779, guid: 4d3aa40464c4a8f4c9de7ed95b51e875, type: 3}
+  grassColors:
+    color01: {r: 0.19607845, g: 0.43137258, b: 0.21568629, a: 1}
+    color02: {r: 0.08627451, g: 0.29411766, b: 0.10196079, a: 0}
+  waterColors:
+    color01: {r: 0.20000002, g: 0.3137255, b: 0.6901961, a: 1}
+    color02: {r: 0.37254903, g: 0.45882356, b: 0.854902, a: 2}
+  roadColors:
+    color01: {r: 0, g: 0, b: 0, a: 1}
+    color02: {r: 0.5, g: 0.5, b: 0.5, a: 2}
+  jumpClip: {fileID: 8300000, guid: c1cd3475642ac4e48ab8f424aee14493, type: 3}
+  barkClip: {fileID: 8300000, guid: 509a38be11c0ac84f9b05d38f49d7a60, type: 3}

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2nd Fence
+  m_Controller: {fileID: 9100000, guid: 691ae9b4e7f438e4c85aa84efb3d0c87, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 734d03ce466101546939da04b93027bb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7e5c7fd6ef2ba0c4a880214b2890744a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b7cd0111132cd8a4d98c43cf4b8ea5f8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 906735223782e7b41b7fb0ebf70182f9, type: 2}

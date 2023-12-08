@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     public float Cat_jumpBuildUpSpeed = 1f;
     public float jumpPowerX = 0.2f;
     public float jumpPowerY = 0.8f;
+    private bool isJumping = false;
     private Vector2 boxColliderSize;
 
     private float colliderSize = 1;
@@ -31,14 +32,13 @@ public class Movement : MonoBehaviour
     private BoxCollider2D boxCol;
     private SpriteRenderer visualSprite;
 
-    
+    //events
+    public delegate void CatJumpAction();
+    public event CatJumpAction onPlayerJump;
 
-    public static Movement instance;
     // Start is called before the first frame update
     private void Awake()
     {
-        instance = this;
-
         //Get rigedbody from gameobjekt
         rb = GetComponent<Rigidbody2D>();
         visualSprite = GetComponent<SpriteRenderer>();
@@ -90,6 +90,7 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetKeyUp(up) && IsGrounded() && delayJumpCoroutine == null)
             {
+
                 delayJumpCoroutine = StartCoroutine(DelayJump());
             }
         }
@@ -107,8 +108,10 @@ public class Movement : MonoBehaviour
     IEnumerator DelayJump()
     {
         jump = true;
+        isJumping = true;
         yield return new WaitForSeconds(1f);
         delayJumpCoroutine = null;
+        isJumping = false;
     }
 
     //check if grounded
@@ -144,18 +147,21 @@ public class Movement : MonoBehaviour
                 rb.AddForce(new Vector2(jumpPower * jumpPowerX * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
                 jump = false;
                 jumpPower = Cat_jumpMinPower;
+
+                //event call
+                onPlayerJump?.Invoke();
             }
         }
         else
         {
             //movment left right hund
-            if (Input.GetKey(left) && IsGrounded())
+            if (Input.GetKey(left) && IsGrounded() && !isJumping)
             {
                 rb.velocity = new Vector3(-speed, rb.velocity.y, 0);
                 direction = -1;
             }
 
-            if (Input.GetKey(right) && IsGrounded())
+            if (Input.GetKey(right) && IsGrounded() && !isJumping)
             {
                 rb.velocity = new Vector3(speed, rb.velocity.y, 0);
                 direction = 1;
@@ -164,8 +170,24 @@ public class Movement : MonoBehaviour
             // Move up hund
             if (jump == true)
             {
+                if(Input.GetKey(left)|| Input.GetKey(right))
+                {
                 rb.AddForce(new Vector2(jumpPower * jumpPowerX * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
                 jump = false;
+
+                //event call
+                onPlayerJump?.Invoke();
+                }
+                else
+                {
+                    rb.AddForce(new Vector2(jumpPower * .05f * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
+                    jump = false;
+
+                    //event call
+                    onPlayerJump?.Invoke();
+
+                }
+
             }
 
         }

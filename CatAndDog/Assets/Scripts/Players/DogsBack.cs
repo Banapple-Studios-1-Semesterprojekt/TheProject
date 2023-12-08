@@ -40,7 +40,7 @@ public class DogsBack : MonoBehaviour
         if (collision.transform.CompareTag("Cat"))
         {
             catIsOnBack = true;
-            StartCoroutine(CheckIfCatMoves());
+            //StartCoroutine(CheckIfCatMoves());
         }
     }
 

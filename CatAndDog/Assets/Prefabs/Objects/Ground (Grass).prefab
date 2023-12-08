@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 667730438555221627}
   - component: {fileID: 1910507462566847129}
   - component: {fileID: 2045464549791082938}
+  - component: {fileID: 1450269351197023850}
   m_Layer: 3
   m_Name: Ground (Grass)
   m_TagString: Untagged
@@ -92,7 +93,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5508937731835419719}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: e224898ae3735ed44b98ecaa945706af, type: 2}
   m_IncludeLayers:
@@ -128,5 +129,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 0.23421049}
+  m_Size: {x: 1.02, y: 0.23421049}
   m_EdgeRadius: 0
+--- !u!114 &1450269351197023850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508937731835419719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0c0db3b4399bc48ad5c08fd66cf199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundType: 0

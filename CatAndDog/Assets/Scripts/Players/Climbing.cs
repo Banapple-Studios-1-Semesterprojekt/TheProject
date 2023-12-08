@@ -42,6 +42,16 @@ public class Climbing : MonoBehaviour
             startClimb = false;
             transform.position = new Vector2(pos, transform.position.y);
         }
+
+        // hvis du klatre og prøver at gå til side stop med at klatre
+        if (Input.GetKeyDown(left) && startClimb == false)
+        {
+            StopClimp();
+        }
+        if (Input.GetKeyDown(right) && startClimb == false)
+        {
+            StopClimp();
+        }
     }
 
     private void FixedUpdate()
@@ -52,16 +62,6 @@ public class Climbing : MonoBehaviour
 
         if (startClimb == false && Input.GetKey(KeyCode.S))
         { rb.velocity = new Vector2(0, -5); }
-
-        // hvis du klatre og prøver at gå til side stop med at klatre
-        if (Input.GetKey(left) && startClimb == false)
-        {
-            StopClimp();
-        }
-        if (Input.GetKey(right) && startClimb == false)
-        {
-            StopClimp();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,11 +86,21 @@ public class Climbing : MonoBehaviour
     private void StopClimp()
     {
         //stop med at klatrer
+        Debug.Log("Stop Climb");
         moveCat.enabled = true;
         moveCat.jumpPower = moveCat.Cat_jumpMinPower;
         rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         rb.gravityScale = gravity;
         rb.drag = 0;
         startClimb = true;
+    }
+    public void stopclimp()
+    {
+        moveCat.enabled = true;
+        moveCat.jumpPower = moveCat.Cat_jumpMinPower;
+        rb.gravityScale = gravity;
+        rb.drag = 0;
+        startClimb = true;
+
     }
 }

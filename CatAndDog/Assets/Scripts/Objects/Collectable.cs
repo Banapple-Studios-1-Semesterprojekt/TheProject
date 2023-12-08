@@ -15,14 +15,15 @@ public class Collectable : MonoBehaviour
     public int unlock = 1;
     public Sprite tuna;
     public Sprite bone;
+    public Sprite unlockSprite;
 
     private UIController controller;
-    private AudioSource pickUpCollectible;
 
     // Start is called before the first frame update
     private void Start()
     {
-        pickUpCollectible = GetComponent<AudioSource>();
+        controller = GameObject.Find("GameCanvas").GetComponent<UIController>();
+
         // set collectable image
         if (cType == CollectableType.Bone)
         {
@@ -32,25 +33,30 @@ public class Collectable : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = tuna;
         }
+        else if (cType == CollectableType.Unlock)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = unlockSprite;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Dog") || other.CompareTag("Cat"))
-        {
-            pickUpCollectible.Play();
-        }
         // ved triggerenter chek type og for�g tyoe i UIcontroller med 1 og bed UIcontroller om at opdatere score text
-        controller = GameObject.Find("Canvas").GetComponent<UIController>();
         switch (cType)
         {
             case CollectableType.Bone:
                 if (other.CompareTag("Dog"))
                 {
+                    GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f); 
+                    gameObject.GetComponent<ParticleSystem>().Play();
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                    Destroy(gameObject,.5f);
+                    Debug.Log("Bone for dog");
                     controller.dogFood++;
-                    controller.scoretimerdog = 5;
+                    controller.ShowFoodScoreUI();
                     controller.Updatescore();
-                    Destroy(gameObject);
+                    
                 }
 
                 break;
@@ -58,10 +64,15 @@ public class Collectable : MonoBehaviour
             case CollectableType.Tuna:
                 if (other.CompareTag("Cat"))
                 {
-                    controller.scoretimercat = 5;
+                    Debug.Log("Tuna");
+                    controller.ShowFoodScoreUI();
                     controller.catFood++;
                     controller.Updatescore();
-                    Destroy(gameObject);
+                    GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f);
+                    gameObject.GetComponent<ParticleSystem>().Play();
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                    Destroy(gameObject, .5f);
                 }
 
                 break;
@@ -69,12 +80,16 @@ public class Collectable : MonoBehaviour
             case CollectableType.Both:
                 if (other.CompareTag("Dog") || other.CompareTag("Cat"))
                 {
-                    controller.scoretimercat = 5;
-                    controller.scoretimerdog = 5;
+                    controller.ShowFoodScoreUI();
                     controller.catFood++;
                     controller.dogFood++;
                     controller.Updatescore();
                     Destroy(gameObject);
+                    GeneralSoundEffect.instance.PlaySoundEffect(DataManager.instance.collectClip, 1f);
+                    gameObject.GetComponent<ParticleSystem>().Play();
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                    Destroy(gameObject, .5f);
                 }
                 break;
 

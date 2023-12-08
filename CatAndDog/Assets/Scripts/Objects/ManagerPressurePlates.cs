@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ManagerPressurePlates : MonoBehaviour
 {
-    public OpenFence openFence; //Creates a data type which is a script and references the script you drag and drop onto this script.
+    public Animator animator;
 
     public int playersOnPlate;
 
+    private bool isOpen = false;
+
     public void NumberOfPlayers()
     {
-        if (playersOnPlate == 2)
+        if (playersOnPlate == 2 && isOpen == false)
         {
-            openFence._openFence = false;
+            animator.SetBool("isFenceOpen", true);
+            GeneralSoundEffect.instance.PlaySoundEffectWithRandomPitch(DataManager.instance.fenceClip, 1f);
+            isOpen = true;
             Debug.Log("open sesame");
         }
     }
