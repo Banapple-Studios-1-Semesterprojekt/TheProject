@@ -12,7 +12,7 @@ public class TriggerCameraSpot : MonoBehaviour
         if (collision.CompareTag("Cat")) { catInside = true; }
         else if(collision.CompareTag("Dog")) { dogInside = true; }
 
-        if (collision.CompareTag("Cat") || collision.CompareTag("Dog"))
+        if ((collision.CompareTag("Cat") || collision.CompareTag("Dog")) && (catInside && dogInside))
         {
             CameraController.instance.SetCameraToSpot(targetSpot, targetZoom);
         }
@@ -23,7 +23,7 @@ public class TriggerCameraSpot : MonoBehaviour
         if (collision.CompareTag("Cat")) { catInside = false; }
         else if (collision.CompareTag("Dog")) { dogInside = false; }
 
-        if ((collision.CompareTag("Cat") || collision.CompareTag("Dog")) && (!catInside && !dogInside))
+        if (collision.CompareTag("Cat") || collision.CompareTag("Dog"))
         {
             CameraController.instance.RemoveCameraFromSpot();
         }

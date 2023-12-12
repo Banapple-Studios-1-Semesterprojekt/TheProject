@@ -180,7 +180,7 @@ public class Movement : MonoBehaviour
                 }
                 else
                 {
-                    rb.AddForce(new Vector2(jumpPower * .05f * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
+                    rb.AddForce(new Vector2(jumpPower * .2f * direction, jumpPower * jumpPowerY), ForceMode2D.Impulse);
                     jump = false;
 
                     //event call
