@@ -145,7 +145,7 @@ public class WinTrigger : MonoBehaviour
         else{min = "0" + t_M.ToString();}
         
         //Set time Display text to min : sec
-        TimeDisplay.text = "time: " + min + ":" + sec;
+        TimeDisplay.text = "your time:  " + min + ":" + sec;
 
         //do the same prosses as above for target time 
         t_S2 = TagetTime;
@@ -166,7 +166,7 @@ public class WinTrigger : MonoBehaviour
         }
         else { min = "0" + t_M2.ToString(); }
 
-        TagetTimeDisplay.text = "target: " + min + ":" + sec;
+        TagetTimeDisplay.text = "target time:  " + min + ":" + sec;
 
         // set defult Image for star vone and catfood   
         for (int i = 0; i < 2; i++)
